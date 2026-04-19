@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monash Moodle Downloader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-row">
+        <h1 data-i18n="title">Moodle Downloader</h1>
+        <button id="langToggle" class="lang-toggle">中文</button>
+      </div>
+    </header>
+
+    <div class="status-section">
+      <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <div class="controls">
+      <button id="scanBtn" class="btn btn-primary">
+        <span class="btn-icon">🔍</span>
+        <span data-i18n="scanBtn">Scan</span>
+      </button>
+      <button id="downloadBtn" class="btn btn-success" disabled>
+        <span class="btn-icon">⬇️</span>
+        <span data-i18n="downloadBtn">Download All</span>
+      </button>
+      <button id="clearBtn" class="btn btn-secondary">
+        <span class="btn-icon">🗑️</span>
+        <span data-i18n="clearBtn">Clear</span>
+      </button>
+    </div>
+
+    <div class="stats" id="statsSection" style="display: none;">
+      <div class="stat-item">
+        <span class="stat-label" data-i18n="statCourses">Courses</span>
+        <span class="stat-value" id="courseCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label" data-i18n="statWeeks">Weeks</span>
+        <span class="stat-value" id="weekCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label" data-i18n="statResources">Files</span>
+        <span class="stat-value" id="resourceCount">0</span>
+      </div>
+    </div>
+
+    <div class="content" id="contentSection">
+      <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p data-i18n="loading">Scanning page resources...</p>
+      </div>
+
+      <div id="resultsContainer" class="results-container"></div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">📭</div>
+        <p data-i18n="emptyTitle">No resources scanned yet</p>
+        <p class="empty-hint" data-i18n="emptyHint1">On a Unit Dashboard: downloads every published file across all weeks.</p>
+        <p class="empty-hint" data-i18n="emptyHint2">On a single Week page: downloads only that week's resources.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
