@@ -1,5 +1,6 @@
-# One-time setup script
+# One-time setup scripts
 github-push.bat
+github-fix-push.bat
 
 # AI / assistant local state — not meant for sharing
 CLAUDE.md
