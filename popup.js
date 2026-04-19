@@ -1,4 +1,3 @@
-// ── i18n ──────────────────────────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
     title: 'Moodle Downloader',
@@ -77,16 +76,14 @@ function toggleLang() {
   currentLang = currentLang === 'en' ? 'zh' : 'en';
   localStorage.setItem('moodle-dl-lang', currentLang);
   applyTranslations();
-  if (scannedResources && scannedResources.length > 0) {
+  if (scannedResources?.length > 0) {
     renderResources(scannedResources);
     updateStats(scannedResources);
   }
 }
 
-// ── Global state ───────────────────────────────────────────────────────────
 let scannedResources = null;
 
-// ── DOM elements ───────────────────────────────────────────────────────────
 const scanBtn = document.getElementById('scanBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const clearBtn = document.getElementById('clearBtn');
@@ -99,7 +96,6 @@ const courseCountEl = document.getElementById('courseCount');
 const weekCountEl = document.getElementById('weekCount');
 const resourceCountEl = document.getElementById('resourceCount');
 
-// ── UI helpers ─────────────────────────────────────────────────────────────
 function showStatus(message, type = 'info') {
   statusMessage.textContent = message;
   statusMessage.className = `status-message show ${type}`;
@@ -107,12 +103,8 @@ function showStatus(message, type = 'info') {
 }
 
 function updateStats(resources) {
-  if (!resources || resources.length === 0) {
-    statsSection.style.display = 'none';
-    return;
-  }
-  let totalWeeks = 0;
-  let totalResources = 0;
+  if (!resources?.length) { statsSection.style.display = 'none'; return; }
+  let totalWeeks = 0, totalResources = 0;
   resources.forEach(course => {
     totalWeeks += course.weeks.length;
     course.weeks.forEach(week => { totalResources += week.resources.length; });
@@ -124,8 +116,7 @@ function updateStats(resources) {
 }
 
 function getResourceIcon(type) {
-  const icons = { PDF: '📄', PPT: '📊', DOC: '📝', VIDEO: '🎥', URL: '🔗' };
-  return icons[type] || '📎';
+  return { PDF: '📄', PPT: '📊', DOC: '📝', VIDEO: '🎥', URL: '🔗' }[type] || '📎';
 }
 
 function escapeHtml(text) {
@@ -134,11 +125,10 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// ── Render ─────────────────────────────────────────────────────────────────
 function renderResources(resources) {
   resultsContainer.innerHTML = '';
 
-  if (!resources || resources.length === 0) {
+  if (!resources?.length) {
     emptyState.style.display = 'flex';
     downloadBtn.disabled = true;
     return;
@@ -147,78 +137,65 @@ function renderResources(resources) {
   emptyState.style.display = 'none';
   downloadBtn.disabled = false;
 
-  // Download path info banner
   const course0 = resources[0];
   const scanType0 = course0.scanType || 'weekpage';
-  const pathKey = scanType0 === 'courseindex' ? 'pathIndex' : 'pathPage';
-  const pathText = t(pathKey, { course: course0.name });
   const pathInfoDiv = document.createElement('div');
   pathInfoDiv.className = 'path-info';
-  pathInfoDiv.textContent = pathText;
+  pathInfoDiv.textContent = t(scanType0 === 'courseindex' ? 'pathIndex' : 'pathPage', { course: course0.name });
   resultsContainer.appendChild(pathInfoDiv);
 
   resources.forEach(course => {
     const scanType = course.scanType || 'weekpage';
-    const scanTypeText = scanType === 'courseindex' ? t('scanTypeIndex') : t('scanTypePage');
-
     const courseItem = document.createElement('div');
     courseItem.className = 'course-item';
 
     const courseHeader = document.createElement('div');
     courseHeader.className = 'course-header';
-    courseHeader.innerHTML = `
-      <span>${escapeHtml(course.name)}</span>
-      <span class="course-toggle">▼</span>
-    `;
+    courseHeader.innerHTML = `<span>${escapeHtml(course.name)}</span><span class="course-toggle">▼</span>`;
 
-    const scanTypeBadge = document.createElement('div');
-    scanTypeBadge.className = 'scan-type-badge';
-    scanTypeBadge.textContent = scanTypeText;
-    courseHeader.appendChild(scanTypeBadge);
+    const badge = document.createElement('div');
+    badge.className = 'scan-type-badge';
+    badge.textContent = t(scanType === 'courseindex' ? 'scanTypeIndex' : 'scanTypePage');
+    courseHeader.appendChild(badge);
 
     const weekContainer = document.createElement('div');
     weekContainer.className = 'week-container';
 
     course.weeks.forEach(week => {
+      const weekDisplayName = (week.weekNumber !== undefined && scanType === 'courseindex')
+        ? `Week ${week.weekNumber}` : week.name;
+
       const weekItem = document.createElement('div');
       weekItem.className = 'week-item';
-
-      // Display name: "Week N" if weekNumber exists, else raw name
-      const weekDisplayName = (week.weekNumber !== undefined && scanType === 'courseindex')
-        ? `Week ${week.weekNumber}`
-        : week.name;
 
       const weekHeader = document.createElement('div');
       weekHeader.className = 'week-header';
       weekHeader.innerHTML = `
         <span>${escapeHtml(weekDisplayName)}</span>
-        <span style="font-size: 11px; color: #888;">${t('resourceCount', { n: week.resources.length })}</span>
+        <span style="font-size:11px;color:#888">${t('resourceCount', { n: week.resources.length })}</span>
       `;
 
       const weekContent = document.createElement('div');
       weekContent.className = 'week-content';
 
-      const resourceList = document.createElement('ul');
-      resourceList.className = 'resource-list';
+      const list = document.createElement('ul');
+      list.className = 'resource-list';
 
       week.resources.forEach(resource => {
-        const resourceItem = document.createElement('li');
-        resourceItem.className = 'resource-item';
-        const icon = getResourceIcon(resource.type);
-        const typeClass = resource.type.toLowerCase();
-        resourceItem.innerHTML = `
-          <span class="resource-icon">${icon}</span>
+        const item = document.createElement('li');
+        item.className = 'resource-item';
+        item.innerHTML = `
+          <span class="resource-icon">${getResourceIcon(resource.type)}</span>
           <span class="resource-name" title="${escapeHtml(resource.name)}">${escapeHtml(resource.name)}</span>
-          <span class="resource-type ${typeClass}">${resource.type}</span>
+          <span class="resource-type ${resource.type.toLowerCase()}">${resource.type}</span>
         `;
-        resourceList.appendChild(resourceItem);
+        list.appendChild(item);
       });
 
-      weekContent.appendChild(resourceList);
+      weekContent.appendChild(list);
       weekItem.appendChild(weekHeader);
       weekItem.appendChild(weekContent);
       weekContainer.appendChild(weekItem);
-
       weekHeader.addEventListener('click', () => weekContent.classList.toggle('show'));
     });
 
@@ -227,21 +204,18 @@ function renderResources(resources) {
     resultsContainer.appendChild(courseItem);
 
     courseHeader.addEventListener('click', e => {
-      if (e.target === scanTypeBadge) return;
+      if (e.target === badge) return;
       courseHeader.querySelector('.course-toggle').classList.toggle('expanded');
       weekContainer.style.display = weekContainer.style.display === 'none' ? 'block' : 'none';
     });
   });
 
-  // Default: expand all
   document.querySelectorAll('.week-content').forEach(el => el.classList.add('show'));
 }
 
-// ── Scan ───────────────────────────────────────────────────────────────────
 async function scanResources() {
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
     if (!tab.url.includes('learning.monash.edu')) {
       showStatus(t('statusNotMoodle'), 'error');
       return;
@@ -255,16 +229,16 @@ async function scanResources() {
     let response;
     try {
       response = await chrome.tabs.sendMessage(tab.id, { action: 'scanResources' });
-    } catch (msgError) {
+    } catch {
       showStatus(t('statusInit'), 'info');
       await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(r => setTimeout(r, 500));
       response = await chrome.tabs.sendMessage(tab.id, { action: 'scanResources' });
     }
 
-    if (response && response.success) {
+    if (response?.success) {
       scannedResources = response.resources;
-      if (scannedResources && scannedResources.length > 0) {
+      if (scannedResources?.length > 0) {
         renderResources(scannedResources);
         updateStats(scannedResources);
         showStatus(t('statusFound', { n: scannedResources.length }), 'success');
@@ -276,9 +250,7 @@ async function scanResources() {
       showStatus(t('statusScanFail') + (response?.error || ''), 'error');
       emptyState.style.display = 'flex';
     }
-
   } catch (error) {
-    console.error('Scan error:', error);
     showStatus(t('statusScanFail') + error.message, 'error');
     emptyState.style.display = 'flex';
   } finally {
@@ -287,30 +259,23 @@ async function scanResources() {
   }
 }
 
-// ── Download ───────────────────────────────────────────────────────────────
 async function downloadAll() {
-  if (!scannedResources || scannedResources.length === 0) {
-    showStatus(t('statusNoResources'), 'error');
-    return;
-  }
+  if (!scannedResources?.length) { showStatus(t('statusNoResources'), 'error'); return; }
   try {
     downloadBtn.disabled = true;
     showStatus(t('statusDownloading'), 'info');
     const response = await chrome.runtime.sendMessage({ action: 'downloadAll', resources: scannedResources });
-    if (response.success) {
-      showStatus(t('statusDownloaded', { n: response.count }), 'success');
-    } else {
-      showStatus(t('statusDownloadFail') + response.error, 'error');
-    }
+    showStatus(response.success
+      ? t('statusDownloaded', { n: response.count })
+      : t('statusDownloadFail') + response.error,
+      response.success ? 'success' : 'error');
   } catch (error) {
-    console.error('Download error:', error);
     showStatus(t('statusDownloadFail') + error.message, 'error');
   } finally {
     downloadBtn.disabled = false;
   }
 }
 
-// ── Clear ──────────────────────────────────────────────────────────────────
 function clearList() {
   scannedResources = null;
   resultsContainer.innerHTML = '';
@@ -320,17 +285,15 @@ function clearList() {
   showStatus(t('statusCleared'), 'info');
 }
 
-// ── Event listeners ────────────────────────────────────────────────────────
 scanBtn.addEventListener('click', scanResources);
 downloadBtn.addEventListener('click', downloadAll);
 clearBtn.addEventListener('click', clearList);
 document.getElementById('langToggle').addEventListener('click', toggleLang);
 
-// ── Init ───────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   applyTranslations();
-  downloadBtn.disabled = !scannedResources || scannedResources.length === 0;
-  if (scannedResources && scannedResources.length > 0) {
+  downloadBtn.disabled = !scannedResources?.length;
+  if (scannedResources?.length > 0) {
     renderResources(scannedResources);
     updateStats(scannedResources);
   }
