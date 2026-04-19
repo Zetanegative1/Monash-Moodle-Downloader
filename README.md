@@ -20,7 +20,7 @@
 
 1. Clone or download this repo:
    ```bash
-   git clone https://github.com/<your-username>/monash-moodle-downloader.git
+   git clone https://github.com/Zetanegative1/Monash-Moodle-Downloader.git
    ```
 2. Open `chrome://extensions/` in Chrome
 3. Flip on **Developer mode** (top-right)
