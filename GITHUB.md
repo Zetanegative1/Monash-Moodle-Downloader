@@ -14,7 +14,7 @@
    - ⚠️ **不要**勾选任何初始化选项（README / .gitignore / license 全不选）
 3. 点 **Create repository**，复制页面上出现的仓库地址，例如：
    ```
-   https://github.com/your-username/monash-moodle-downloader.git
+   https://github.com/Zetanegative1/Monash-Moodle-Downloader.git
    ```
 
 ---
@@ -29,7 +29,7 @@ git branch -M main
 git add .
 git status         # 确认 CLAUDE.md / .claude/ 不在列表里
 git commit -m "Initial release: v4.4.0"
-git remote add origin https://github.com/your-username/monash-moodle-downloader.git
+git remote add origin https://github.com/Zetanegative1/Monash-Moodle-Downloader.git
 git push -u origin main
 ```
 
