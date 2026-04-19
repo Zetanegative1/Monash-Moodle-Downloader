@@ -1,0 +1,31 @@
+# One-time setup script
+github-push.bat
+
+# AI / assistant local state — not meant for sharing
+CLAUDE.md
+.claude/
+.cursor/
+.cursorrules
+.aider*
+.github-copilot*
+
+# Local test artefacts
+Unit_*.html
+Unit_*_files/
+console-*.log
+learning.monash.edu-*.log
+*.log
+
+# OS / editor
+desktop.ini
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node / build (if added later)
+node_modules/
+dist/
+build/
