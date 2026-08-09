@@ -1,3 +1,5 @@
+
+
 # 📚 Monash Moodle Downloader
 
 > One-click batch download for Monash University Moodle course resources — auto-sorted by week. Stop right-clicking 40 PDFs the night before finals. 😮‍💨
@@ -73,7 +75,7 @@ moodle-downloader/
 
 - Panopto videos can only be saved as `.url` shortcuts — CORS blocks direct download 😔
 - Collapsed sidebar sections aren't scanned; expand them first if needed
-- If sub-folders don't appear after download, check Chrome's "always ask where to save" setting
+- If sub-folders don't appear after download, ensure Chrome's "Ask where to save each file before downloading" setting is **disabled**
 
 ## 🙏 Credits & acknowledgements
 
