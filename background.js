@@ -1,14 +1,16 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'downloadAll') {
+if (typeof chrome !== 'undefined' && chrome.runtime?.onMessage) {
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action !== 'downloadAll') return false;
+
     handleDownloadAll(request.resources)
       .then(result => sendResponse(result))
       .catch(error => sendResponse({ success: false, error: error.message }));
     return true;
-  }
-});
+  });
+}
 
 async function handleDownloadAll(resources) {
-  let downloadCount = 0;
+  let skippedCount = 0;
   const downloadPromises = [];
 
   try {
@@ -21,14 +23,21 @@ async function handleDownloadAll(resources) {
         const path = scanType === 'courseindex' ? `${course.name}/${folderName}` : folderName;
 
         for (const resource of week.resources) {
-          downloadPromises.push(downloadResource(resource, path));
-          downloadCount++;
+          if (resource.downloadable === false) {
+            skippedCount++;
+            continue;
+          }
+
+          const resourcePath = appendFolderPath(path, resource.folderPath);
+          downloadPromises.push(downloadResource(resource, resourcePath));
         }
       }
     }
 
-    await Promise.all(downloadPromises);
-    return { success: true, count: downloadCount };
+    const results = await Promise.all(downloadPromises);
+    const downloadCount = results.filter(Boolean).length;
+    const failedCount = results.length - downloadCount;
+    return { success: true, count: downloadCount, skipped: skippedCount, failed: failedCount };
 
   } catch (error) {
     console.error('Download error:', error);
@@ -39,8 +48,9 @@ async function handleDownloadAll(resources) {
 async function downloadResource(resource, path) {
   try {
     if (resource.type === 'VIDEO') {
-      if (resource.url.match(/\.(mp4|webm|ogg|avi|mov)(\?.*)?$/i)) {
-        await downloadFile(resource.url, resource.name + '.mp4', path);
+      if (resource.url.match(/\.(mp4|webm|avi|mov|m4v|mkv|ogv|mpeg|mpg)([?#].*)?$/i)) {
+        const filename = hasFileExtension(resource.name) ? resource.name : `${resource.name}.mp4`;
+        await downloadFile(resource.url, filename, path);
       } else {
         await createUrlShortcut(resource.name, resource.url, path);
       }
@@ -49,16 +59,18 @@ async function downloadResource(resource, path) {
     } else {
       await downloadFile(resource.url, resource.name, path);
     }
+    return true;
   } catch (error) {
     console.error(`Failed to download [${resource.name}]:`, error);
+    return false;
   }
 }
 
 async function downloadFile(url, filename, path) {
   return new Promise((resolve, reject) => {
     let finalFilename = filename;
-    if (!finalFilename.includes('.')) {
-      const ext = url.match(/\.([a-z0-9]{3,4})(\?.*)?$/i);
+    if (!hasFileExtension(finalFilename)) {
+      const ext = new URL(url).pathname.match(/\.([a-z0-9]{2,5})$/i);
       if (ext) finalFilename += '.' + ext[1];
     }
 
@@ -72,6 +84,28 @@ async function downloadFile(url, filename, path) {
       else resolve(downloadId);
     });
   });
+}
+
+function appendFolderPath(basePath, folderPath) {
+  if (!folderPath) return basePath;
+  const safeSegments = String(folderPath)
+    .split(/[\\/]+/)
+    .map(sanitizePathSegment)
+    .filter(Boolean);
+  return safeSegments.length > 0 ? `${basePath}/${safeSegments.join('/')}` : basePath;
+}
+
+function sanitizePathSegment(value) {
+  return String(value || '')
+    .trim()
+    .replace(/[<>:"/\\|?*\u0000-\u001F]/g, '-')
+    .replace(/\s+/g, ' ')
+    .replace(/[. ]+$/g, '')
+    .substring(0, 120);
+}
+
+function hasFileExtension(filename) {
+  return /\.[a-z0-9]{1,8}$/i.test(filename || '');
 }
 
 async function createUrlShortcut(name, url, path) {
@@ -91,20 +125,31 @@ async function createUrlShortcut(name, url, path) {
   });
 }
 
-chrome.runtime.onInstalled.addListener(() => {
-  if (!chrome.contextMenus) return;
-  chrome.contextMenus.create({
-    id: 'downloadCourseResources',
-    title: 'Download course resources',
-    contexts: ['page'],
-    documentUrlPatterns: ['https://learning.monash.edu/*']
-  }, () => { chrome.runtime.lastError; });
-});
+if (typeof chrome !== 'undefined' && chrome.runtime?.onInstalled) {
+  chrome.runtime.onInstalled.addListener(() => {
+    if (!chrome.contextMenus) return;
+    chrome.contextMenus.create({
+      id: 'downloadCourseResources',
+      title: 'Download course resources',
+      contexts: ['page'],
+      documentUrlPatterns: ['https://learning.monash.edu/*']
+    }, () => { chrome.runtime.lastError; });
+  });
+}
 
-if (chrome.contextMenus) {
+if (typeof chrome !== 'undefined' && chrome.contextMenus) {
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === 'downloadCourseResources') {
       chrome.tabs.sendMessage(tab.id, { action: 'scanResources' }).catch(() => {});
     }
   });
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    appendFolderPath,
+    handleDownloadAll,
+    hasFileExtension,
+    sanitizePathSegment
+  };
 }
