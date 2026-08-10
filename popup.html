@@ -10,60 +10,101 @@
   <div class="container">
     <header>
       <div class="header-row">
-        <h1 data-i18n="title">Moodle Downloader</h1>
+        <h1 id="appTitle" data-i18n="title">Moodle Downloader</h1>
+        <button id="settingsBtn" class="header-icon-button" aria-label="Settings" title="Settings">⚙️</button>
         <button id="langToggle" class="lang-toggle">中文</button>
       </div>
     </header>
 
-    <div class="status-section">
-      <div id="statusMessage" class="status-message"></div>
-    </div>
-
-    <div class="controls">
-      <button id="scanBtn" class="btn btn-primary">
-        <span class="btn-icon">🔍</span>
-        <span data-i18n="scanBtn">Scan</span>
-      </button>
-      <button id="downloadBtn" class="btn btn-success" disabled>
-        <span class="btn-icon">⬇️</span>
-        <span data-i18n="downloadBtn">Download All</span>
-      </button>
-      <button id="clearBtn" class="btn btn-secondary">
-        <span class="btn-icon">🗑️</span>
-        <span data-i18n="clearBtn">Clear</span>
-      </button>
-    </div>
-
-    <div class="stats" id="statsSection" style="display: none;">
-      <div class="stat-item">
-        <span class="stat-label" data-i18n="statCourses">Courses</span>
-        <span class="stat-value" id="courseCount">0</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label" data-i18n="statWeeks">Weeks</span>
-        <span class="stat-value" id="weekCount">0</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label" data-i18n="statResources">Files</span>
-        <span class="stat-value" id="resourceCount">0</span>
-      </div>
-    </div>
-
-    <div class="content" id="contentSection">
-      <div id="loadingSpinner" class="loading-spinner" style="display: none;">
-        <div class="spinner"></div>
-        <p data-i18n="loading">Scanning page resources...</p>
+    <main id="homeView" class="popup-view">
+      <div class="status-section">
+        <div id="statusMessage" class="status-message"></div>
       </div>
 
-      <div id="resultsContainer" class="results-container"></div>
-
-      <div id="emptyState" class="empty-state">
-        <div class="empty-icon">📭</div>
-        <p data-i18n="emptyTitle">No resources scanned yet</p>
-        <p class="empty-hint" data-i18n="emptyHint1">On a Unit Dashboard: downloads every published file across all weeks.</p>
-        <p class="empty-hint" data-i18n="emptyHint2">On a single Week page: downloads only that week's resources.</p>
+      <div class="controls">
+        <button id="scanBtn" class="btn btn-primary">
+          <span class="btn-icon">🔍</span>
+          <span data-i18n="scanBtn">Scan</span>
+        </button>
+        <button id="downloadBtn" class="btn btn-success" disabled>
+          <span class="btn-icon">⬇️</span>
+          <span data-i18n="downloadBtn">Download All</span>
+        </button>
+        <button id="clearBtn" class="btn btn-secondary">
+          <span class="btn-icon">🗑️</span>
+          <span data-i18n="clearBtn">Clear</span>
+        </button>
       </div>
-    </div>
+
+      <div class="stats" id="statsSection" style="display: none;">
+        <div class="stat-item">
+          <span class="stat-label" data-i18n="statWeeks">Weeks</span>
+          <span class="stat-value" id="weekCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label" data-i18n="statResources">Files</span>
+          <span class="stat-value" id="resourceCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label" data-i18n="statSkipped">Skipped</span>
+          <span class="stat-value stat-skipped" id="skippedCount">0</span>
+        </div>
+      </div>
+
+      <div class="content" id="contentSection">
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+          <div class="spinner"></div>
+          <p id="loadingText" data-i18n="loading">Scanning page resources...</p>
+        </div>
+
+        <div id="resultsContainer" class="results-container"></div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">📭</div>
+          <p data-i18n="emptyTitle">No resources scanned yet</p>
+          <p class="empty-hint" data-i18n="emptyHint1">On a Unit Dashboard: downloads every published file across all weeks.</p>
+          <p class="empty-hint" data-i18n="emptyHint2">On a single Week page: downloads only that week's resources.</p>
+        </div>
+      </div>
+    </main>
+
+    <main id="settingsView" class="popup-view settings-view" hidden>
+      <section class="settings-card">
+        <div class="settings-heading">
+          <h2 data-i18n="sizeTitle">Maximum file size</h2>
+          <p data-i18n="sizeDescription">The limit applies to each file. Unknown-size files are skipped when a limit is enabled.</p>
+        </div>
+        <div class="size-grid" role="radiogroup" aria-label="Maximum file size">
+          <label class="size-option">
+            <input type="radio" name="maxFileSizeMb" value="0">
+            <span><strong data-i18n="unlimited">Unlimited</strong><small data-i18n="unlimitedHint">Fastest scan; no size checks</small></span>
+          </label>
+          <label class="size-option"><input type="radio" name="maxFileSizeMb" value="10"><strong>10 MB</strong></label>
+          <label class="size-option"><input type="radio" name="maxFileSizeMb" value="20"><strong>20 MB</strong></label>
+          <label class="size-option"><input type="radio" name="maxFileSizeMb" value="50"><strong>50 MB</strong></label>
+        </div>
+      </section>
+
+      <section class="settings-card">
+        <div class="settings-heading type-heading">
+          <div>
+            <h2 data-i18n="typesTitle">File types to download</h2>
+            <p data-i18n="typesDescription">Unchecked groups remain visible in scan results but are skipped.</p>
+          </div>
+          <div class="selection-actions">
+            <button id="selectAllBtn" class="text-button" data-i18n="selectAll">Select all</button>
+            <button id="clearAllBtn" class="text-button" data-i18n="clearAll">Clear all</button>
+          </div>
+        </div>
+        <div id="fileGroupGrid" class="file-group-grid"></div>
+      </section>
+
+      <div class="settings-actions">
+        <p id="saveStatus" class="save-status" aria-live="polite"></p>
+        <button id="resetBtn" class="settings-button settings-button-secondary" data-i18n="reset">Restore defaults</button>
+        <button id="saveBtn" class="settings-button settings-button-primary" data-i18n="save">Save settings</button>
+      </div>
+    </main>
   </div>
 
   <script src="popup.js"></script>
