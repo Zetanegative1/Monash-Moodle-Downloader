@@ -2,7 +2,7 @@
 
 > One-click batch download for Monash University Moodle course resources — auto-sorted by week. Stop right-clicking 40 PDFs the night before finals. 😮‍💨
 
-[![Version](https://img.shields.io/badge/version-4.6.0-6366f1)](./docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-4.6.1-6366f1)](./docs/CHANGELOG.md)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-8b5cf6)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
@@ -21,6 +21,17 @@
 
 ## 🚀 Install
 
+### For most users — download the ZIP
+
+1. Open the [latest release](https://github.com/Zetanegative1/Monash-Moodle-Downloader/releases/latest).
+2. Under **Assets**, download `Monash-Moodle-Downloader-vX.Y.Z.zip` and extract it to a permanent folder.
+3. Open `chrome://extensions/` in Chrome and enable **Developer mode**.
+4. Click **Load unpacked** and select the extracted folder that contains `manifest.json`.
+
+Chrome does not automatically update unpacked extensions. When a new release is available, download and extract the new ZIP, then load that folder again.
+
+### For developers — clone the repository
+
 1. Clone or download this repo:
    ```bash
    git clone https://github.com/Zetanegative1/Monash-Moodle-Downloader.git
@@ -29,6 +40,12 @@
 3. Flip on **Developer mode** (top-right)
 4. Click **Load unpacked** → pick the project folder
 5. Pin the extension icon to your toolbar and you're done 🎉
+
+To build the same clean ZIP locally, run:
+
+```bash
+python scripts/package_extension.py
+```
 
 ## 📖 How to use
 
@@ -66,6 +83,11 @@ moodle-downloader/
 ├── background.js
 ├── content.js
 ├── popup.html · popup.css · popup.js
+├── scripts/
+│   └── package_extension.py
+├── tests/
+├── .github/
+│   └── workflows/release.yml
 ├── icons/
 │   └── icon16 · icon48 · icon128.png
 └── docs/
@@ -78,7 +100,7 @@ moodle-downloader/
 
 - Panopto videos can only be saved as `.url` shortcuts — CORS blocks direct download 😔
 - Collapsed sidebar sections aren't scanned; expand them first if needed
-- If sub-folders don't appear after download, check Chrome's "always ask where to save" setting
+- If sub-folders don't appear after download, ensure Chrome's **Ask where to save each file before downloading** setting is disabled
 
 ## 🙏 Credits & acknowledgements
 

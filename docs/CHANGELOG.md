@@ -3,6 +3,16 @@
 All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [4.6.1] — 2026-08-10
+
+### Added
+- A reproducible packaging script that creates a clean extension ZIP containing only runtime files and the license.
+- A tag-driven GitHub Actions workflow that tests the extension and attaches the ZIP to a GitHub Release.
+- Simple ZIP installation instructions for users who do not use Git or GitHub source checkouts.
+
+### Changed
+- Clarified that Chrome's per-download location prompt must be disabled for nested download folders to work reliably.
+
 ## [4.6.0] — 2026-08-10
 
 ### Added
