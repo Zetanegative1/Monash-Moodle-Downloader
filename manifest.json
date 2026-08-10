@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Monash Moodle Downloader",
-  "version": "4.6.0",
+  "version": "4.6.1",
   "description": "Batch-download Monash Moodle course resources, auto-organized by week.",
   "permissions": [
     "downloads",
