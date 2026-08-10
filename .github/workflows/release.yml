@@ -1,0 +1,59 @@
+name: Publish extension ZIP
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run JavaScript checks
+        run: |
+          node --check content.js
+          node --check background.js
+          node --check popup.js
+          node --test tests/*.test.js
+
+      - name: Run packaging tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Verify tag matches manifest version
+        shell: bash
+        run: |
+          version=$(python -c 'import json; print(json.load(open("manifest.json"))["version"])')
+          test "$GITHUB_REF_NAME" = "v$version"
+
+      - name: Build extension ZIP
+        run: python scripts/package_extension.py
+
+      - name: Create or update GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          asset="dist/Monash-Moodle-Downloader-${GITHUB_REF_NAME}.zip"
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" "$asset" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "$asset" \
+              --title "Monash Moodle Downloader ${GITHUB_REF_NAME}" \
+              --generate-notes
+          fi
