@@ -30,7 +30,7 @@
 
 ## 清单采用的规则
 
-2026-11-16 确认。
+2026-11-16 确认；2026-11-17 补充了 `assign` 一行，依据是新存的 ENG5100 `Assessments` 页面（`tests/fixtures/ENG5100-ENG6100-assessments.html`）和 `Team project report` 作业页面（`tests/fixtures/pages/assign-5840046.html`）。
 
 1. **范围**：course index 里的所有 section，不限于 `Learning`。
 2. **文件夹**：每个有资源的顶层或页面级 section 一个文件夹；页内子 section 拍平进所属页面（沿用 README 里的现有约定），清单保留「子 section」列。只做容器的 section（`Learning`）不产生文件夹。顺序按 course index 的文档顺序。
@@ -43,7 +43,8 @@
    | `folder` | 展开成真实文件，放进以活动名命名的子目录，保留 folder 内部目录 |
    | `url`、`page`、`lti` | `.url` 快捷方式，归入 link 分组 |
    | 正文里的 `pluginfile.php` 链接 | 下载文件，保存名取 URL 中的文件名，归到该 cm 所属 section |
-   | `assign`、`quiz`、`forum`、`choice` 及其他 | 不下载 |
+   | `assign` | 打开作业页面，下载作业说明里的附件（`mod_assign/intro` 和 `mod_assign/introattachment`），放进以作业名命名的子目录；没有附件的作业不产生任何文件；自己的提交和反馈文件不下载 |
+   | `quiz`、`forum`、`choice` 及其他 | 不下载 |
    | 受限、无链接 | 不下载 |
 
 5. **保存名**：非法字符 `<>:"/\|?*` 换成 `-`，合并空白，去掉结尾的 `-`、`.`、空格，截断到 120 字符。

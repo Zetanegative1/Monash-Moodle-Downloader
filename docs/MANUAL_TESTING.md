@@ -21,7 +21,7 @@
 
 ## 3. 扫描是否把 resource 标记为「已查看」
 
-扫描会对每个 resource 发一次请求，Moodle 可能把它记为一次查看。
+扫描会对每个 resource 发一次请求，并打开每个作业页面，Moodle 可能把它们记为一次查看。
 
 1. 找一个完成条件是「查看」且状态为 To do 的 resource。
 2. 只 Scan，不下载。
@@ -43,14 +43,14 @@
 
 1. 打开 MTE5886 的 Week 7 页面（地址带 `&section=N`），Scan。预期：只有 `Week 7` 一个文件夹，下载到 `Downloads/Week 7/`。
 2. 打开 ENG5105 的 `Weekly Workshop - Common Materials` 页面，Scan。预期：除了 7 个活动，还能看到 label 正文里链接的文件。
-3. 打开 ENG5100 的 `Assessments` 页面，Scan。预期：只有 folder 和 resource，没有 assignment / quiz / choice。
+3. 打开 ENG5100 的 `Assessments` 页面，Scan。预期：`Team project report` 下有两个附件，下载后在 `Downloads/Assessments/Team project report/` 里；没有附件的作业、quiz、choice 不出现；列表里没有你自己提交的文件。
 
 任何一步结果不对，用 SingleFile 另存该页面，可以直接加成新的 fixture。
 
 ## 7. 受限条目与非文件活动
 
 1. ENG5105 dashboard Scan：`Chemical and Materials Engineering` 里不应出现带锁的 `Aspen Assessment Week N [2%]`。
-2. MTE5886 dashboard Scan：不应出现 `Mock exam questions`（quiz）、`General Discussion Forum`、`Assignment 1`。
+2. MTE5886 dashboard Scan：不应出现 `Mock exam questions`（quiz）和 `General Discussion Forum`。`Assignment 1` 等作业只有带附件时才出现，且是附件本身，不是 `.php` 页面。
 
 ## 8. 文件夹展开与快捷方式
 

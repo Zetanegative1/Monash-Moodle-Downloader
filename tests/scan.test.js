@@ -9,10 +9,13 @@ const { JSDOM } = require('jsdom');
 
 const { loadFixture, scanAndDownload, scanPage } = require('./helpers/extension-harness.js');
 const { resourceFile } = require('./helpers/fake-moodle.js');
+const fs = require('node:fs');
+const path = require('node:path');
 const {
   buildDownloadPlan,
   describeSectionFolder,
   findResourceFileInDocument,
+  parseAssignmentDocument,
   readMoodlePage,
   sanitizePathSegment,
   withExtension
@@ -215,6 +218,38 @@ test('finds the file on a resource page whichever way Moodle embeds it', () => {
     assert.equal(findResourceFileInDocument(dom.window.document, pageUrl), expectedUrl);
     dom.window.close();
   }
+});
+
+test('a real assignment page yields its attachments and never the submission', () => {
+  const pageUrl = `${ORIGIN}/mod/assign/view.php?id=5840046`;
+  const html = fs.readFileSync(path.join(__dirname, 'fixtures', 'pages', 'assign-5840046.html'), 'utf8');
+  const dom = new JSDOM(html, { url: pageUrl });
+  const files = parseAssignmentDocument(dom.window.document, pageUrl, 'Team project report');
+  dom.window.close();
+
+  assert.match(html, /assignsubmission_file\/submission_files/);
+  assert.deepEqual(files.map(file => [file.folderPath, file.name, file.type]), [
+    ['Team project report', 'ENG5100 Team Project_Brief Requirements 2026 Sem 2_Final_V2.docx.pdf', 'PDF'],
+    ['Team project report', 'W7_Team Project_2026_S2.pdf', 'PDF']
+  ]);
+});
+
+test('assignment attachments keep the subfolders staff put them in', () => {
+  const pageUrl = `${ORIGIN}/mod/assign/view.php?id=9`;
+  const area = '/pluginfile.php/55/mod_assign';
+  const dom = new JSDOM(`<body>
+    <a href="${area}/intro/Brief.pdf">Brief</a>
+    <a href="${area}/introattachment/0/Data/Set%20A.csv?forcedownload=1">Set A.csv</a>
+    <a href="${area}/introattachment/0/Data/Set%20A.csv">Set A.csv again</a>
+    <a href="/pluginfile.php/55/assignfeedback_file/feedback_files/3/Marked.pdf">Marked.pdf</a>
+  </body>`);
+  const files = parseAssignmentDocument(dom.window.document, pageUrl, 'Lab: report 1');
+  dom.window.close();
+
+  assert.deepEqual(files.map(file => `${file.folderPath}/${file.name}`), [
+    'Lab- report 1/Brief.pdf',
+    'Lab- report 1/Data/Set A.csv'
+  ]);
 });
 
 test('names stay valid and never end in a separator', () => {

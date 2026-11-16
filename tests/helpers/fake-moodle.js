@@ -5,6 +5,9 @@
  * Everything is derived from the course-module id, so a test can predict what
  * the "server" holds for any activity without a lookup table.
  */
+const fs = require('node:fs');
+const path = require('node:path');
+
 const ORIGIN = 'https://learning.monash.edu';
 const MB = 1024 * 1024;
 
@@ -70,6 +73,57 @@ function folderFiles(cmId) {
   }));
 }
 
+// Assignment pages saved from Moodle are served as they are, with the files they really link.
+const SAVED_ASSIGNMENT_PAGES = {
+  5840046: {
+    page: path.join(__dirname, '..', 'fixtures', 'pages', 'assign-5840046.html'),
+    fileArea: `${ORIGIN}/pluginfile.php/7402356/mod_assign/introattachment/0`,
+    files: [
+      'ENG5100 Team Project_Brief Requirements 2026 Sem 2_Final_V2.docx.pdf',
+      'W7_Team Project_2026_S2.pdf'
+    ]
+  }
+};
+
+/** Files attached to an assignment's description. Odd-numbered assignments have none. */
+function assignmentFiles(cmId) {
+  const id = Number(cmId);
+  const saved = SAVED_ASSIGNMENT_PAGES[id];
+  if (saved) {
+    return saved.files.map(relativePath => ({
+      relativePath,
+      fileGroup: 'pdf',
+      bytes: EMBEDDED_FILE_BYTES,
+      url: `${saved.fileArea}/${encodeURIComponent(relativePath)}?forcedownload=1`
+    }));
+  }
+  if (id % 2 !== 0) return [];
+  return [
+    { relativePath: `Brief ${id}.pdf`, area: 'intro', fileGroup: 'pdf', bytes: EMBEDDED_FILE_BYTES },
+    { relativePath: `Template ${id}.docx`, area: 'introattachment/0', fileGroup: 'document', bytes: EMBEDDED_FILE_BYTES }
+  ].map(file => ({
+    ...file,
+    url: `${ORIGIN}/pluginfile.php/${id}/mod_assign/${file.area}/${encodeURIComponent(file.relativePath)}`
+  }));
+}
+
+/** Every assignment page also links the student's own submission, which must never be downloaded. */
+function assignmentPageHtml(cmId) {
+  const saved = SAVED_ASSIGNMENT_PAGES[Number(cmId)];
+  if (saved) return fs.readFileSync(saved.page, 'utf8');
+
+  const links = assignmentFiles(cmId)
+    .map(file => `<a href="${file.url}${file.area === 'intro' ? '' : '?forcedownload=1'}">${file.relativePath}</a>`)
+    .join('\n');
+  return `<!DOCTYPE html><html><body><div id="region-main">
+<div id="intro" class="box generalbox"><div class="no-overflow">${links}</div></div>
+<div class="submissionstatustable">
+<a href="${ORIGIN}/pluginfile.php/${cmId}/assignsubmission_file/submission_files/1/My%20submission.pdf?forcedownload=1">My submission.pdf</a>
+<a href="${ORIGIN}/pluginfile.php/${cmId}/assignfeedback_file/feedback_files/1/Feedback.pdf">Feedback.pdf</a>
+</div>
+</div></body></html>`;
+}
+
 function folderPageHtml(cmId) {
   const links = folderFiles(cmId)
     .map(file => `<a href="${file.url.replace(/&/g, '&amp;')}">${file.relativePath.split('/').pop()}</a>`)
@@ -102,6 +156,10 @@ function describeUrl(rawUrl) {
   if (moduleMatch?.[1] === 'resource' && cmId) {
     const file = resourceFile(cmId);
     return { finalUrl: file.url, filename: file.filename, contentType: file.contentType, bytes: file.bytes };
+  }
+  if (moduleMatch?.[1] === 'assign' && cmId) {
+    const html = assignmentPageHtml(cmId);
+    return { finalUrl: url.href, contentType: 'text/html; charset=utf-8', bytes: Buffer.byteLength(html), body: html };
   }
   if (moduleMatch?.[1] === 'folder' && cmId) {
     const html = folderPageHtml(cmId);
@@ -192,6 +250,7 @@ function createFakeMoodle() {
 
 module.exports = {
   EMBEDDED_FILE_BYTES,
+  assignmentFiles,
   MB,
   ORIGIN,
   createFakeMoodle,

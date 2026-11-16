@@ -318,6 +318,12 @@
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=5651620"
+        },
+        {
+          "name": "Assignment 3 preliminary design files and slides",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651621"
         }
       ]
     },
@@ -336,6 +342,12 @@
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=6632141"
+        },
+        {
+          "name": "Assignment 3 - Final redesigned part CAD file and presentation slides",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651629"
         }
       ]
     },
@@ -366,6 +378,24 @@
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=6700316"
+        },
+        {
+          "name": "Assignment 3 Final Report",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651638"
+        }
+      ]
+    },
+    {
+      "name": "Week 14",
+      "section": "Week 14 - Mock Exam",
+      "items": [
+        {
+          "name": "Mock exam dropbox",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651649"
         }
       ]
     },
@@ -384,6 +414,18 @@
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=5651668"
+        },
+        {
+          "name": "Assignment 1",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651669"
+        },
+        {
+          "name": "Assignment 2",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5651670"
         },
         {
           "name": "Assignment 1",
@@ -426,51 +468,15 @@
       "reason": "not-a-file"
     },
     {
-      "name": "Assignment 3 preliminary design files and slides",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651621",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Assignment 3 - Final redesigned part CAD file and presentation slides",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651629",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Assignment 3 Final Report",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651638",
-      "reason": "not-a-file"
-    },
-    {
       "name": "Mock exam questions",
       "mod": "quiz",
       "url": "https://learning.monash.edu/mod/quiz/view.php?id=5651648",
       "reason": "not-a-file"
     },
     {
-      "name": "Mock exam dropbox",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651649",
-      "reason": "not-a-file"
-    },
-    {
       "name": "General Discussion Forum",
       "mod": "forum",
       "url": "https://learning.monash.edu/mod/forum/view.php?id=5651663",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Assignment 1",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651669",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Assignment 2",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651670",
       "reason": "not-a-file"
     }
   ]

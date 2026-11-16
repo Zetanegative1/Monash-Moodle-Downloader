@@ -404,16 +404,34 @@
           "url": "https://learning.monash.edu/mod/resource/view.php?id=5576573"
         },
         {
+          "name": "Laboratory Report 1 (15% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6317875"
+        },
+        {
           "name": "Pilot Plant RO Lab Materials",
           "kind": "folder",
           "mod": "folder",
           "url": "https://learning.monash.edu/mod/folder/view.php?id=6317992"
         },
         {
+          "name": "Laboratory Report 2 (15% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6317886"
+        },
+        {
           "name": "Assignment 1 2026",
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=5576579"
+        },
+        {
+          "name": "Assignment 1 - Literature Review OR Proposal Writing (10% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5576580"
         }
       ]
     },
@@ -441,24 +459,6 @@
       "name": "Student discussion forum",
       "mod": "forum",
       "url": "https://learning.monash.edu/mod/forum/view.php?id=5576582",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Laboratory Report 1 (15% of final grade)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6317875",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Laboratory Report 2 (15% of final grade)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6317886",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Assignment 1 - Literature Review OR Proposal Writing (10% of final grade)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5576580",
       "reason": "not-a-file"
     }
   ]

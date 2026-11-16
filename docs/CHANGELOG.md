@@ -15,7 +15,7 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 - File resources were saved with a `.php` extension.
-- Forums, assignments, quizzes and choices were downloaded as if they were files.
+- Forums, quizzes and choices were downloaded as if they were files.
 - Restricted activities were downloaded as the course page, and several of them collapsed into one entry.
 - Scanning from the `UNIT DASHBOARD` tab (`…&section=0`) found nothing.
 - Sections that are not weeks were moved to the end of the list.
@@ -23,7 +23,8 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The popup's fallback injection only loaded one of the content scripts.
 
 ### Added
-- Four sanitized unit pages as test fixtures, golden tests that drive the extension through its message interfaces, and `scripts/sanitize_fixture.js` for adding more.
+- Assignments are opened like folders: files attached to the assignment description are downloaded into a folder named after the assignment. Assignments without attachments produce nothing, and submission and feedback files are never touched.
+- Four sanitized unit dashboards, one section page and one assignment page as test fixtures, golden tests that drive the extension through its message interfaces, and `scripts/sanitize_fixture.js` for adding more.
 - `docs/MANUAL_TESTING.md` with the checks that need a real Moodle login.
 
 ## [4.6.1] — 2026-08-10

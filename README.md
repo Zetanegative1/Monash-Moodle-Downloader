@@ -14,6 +14,7 @@
 - 📁 **Auto-foldered** — one folder per Moodle section, in Moodle's order: `Unit information/`, `Week 1/`, `Week 2/`, … `Assessments/`
 - 🧭 **Works across unit layouts** — reads Moodle's own page structure instead of looking for particular section titles
 - 🗂️ **Moodle folders expanded** — files inside _Lecture notes_, _After class reading_, and similar activities keep their folder structure
+- 📝 **Assignment briefs included** — files attached to an assignment land in a folder named after it; assignments without attachments are left out
 - 📏 **Size limits** — choose 10 MB, 20 MB, 50 MB, or Unlimited; oversized files are shown but skipped
 - 🎛️ **Type filters** — independently include or exclude PDFs, presentations, documents, spreadsheets, video, audio, images, archives, links, and other files
 - 📄 **Handles the usual suspects** — PDF, PPT, DOC, MP4, saved under the activity's name with the file's real extension; external links, pages and LTI tools (Panopto, reading lists) get saved as `.url` shortcuts
@@ -64,7 +65,9 @@ Sections whose title starts with `Week N` are saved as `Week N`; the others keep
 Downloads/Week N/…
 ```
 
-**What is skipped** — assignments, quizzes, forums, choices and activities you don't have access to.
+**Assignments** — each assignment with attached files gets its own folder, e.g. `Assessments/Team project report/…`. Your own submissions and feedback files are never downloaded.
+
+**What is skipped** — quizzes, forums, choices, assignments without attachments, and activities you don't have access to.
 
 **Language toggle** — Hit the `EN / 中文` pill in the header. Your pick sticks.
 
@@ -82,7 +85,7 @@ Downloads/Week N/…
 | Service worker | [`background.js`](./background.js) | Fires off `chrome.downloads.download` tasks with the right folder paths |
 | Popup UI | [`popup.html`](./popup.html) / [`popup.js`](./popup.js) / [`popup.css`](./popup.css) | Renders downloads and the embedded settings view, handles actions and bilingual toggle |
 
-**Scanning, in one paragraph:** On a Unit Dashboard the whole course index is read as a tree. Every section with its own page becomes a folder and the sections shown inside that page are flattened into it. Each activity is handled by its Moodle module type: `resource` is downloaded, `folder` is opened in the background and expanded into its real files, `url` / `page` / `lti` become shortcuts, and everything else is skipped. For each `resource` one lightweight header request tells the extension the real file name, type and size, which also drives the size limit and type filters. On a section page the same steps run for that section only, and files linked from inline content in the page body are added. Both paths produce the same resource schema, which the service worker then downloads.
+**Scanning, in one paragraph:** On a Unit Dashboard the whole course index is read as a tree. Every section with its own page becomes a folder and the sections shown inside that page are flattened into it. Each activity is handled by its Moodle module type: `resource` is downloaded, `folder` is opened in the background and expanded into its real files, `assign` is opened and the files attached to its description are collected, `url` / `page` / `lti` become shortcuts, and everything else is skipped. For each `resource` one lightweight header request tells the extension the real file name, type and size, which also drives the size limit and type filters. On a section page the same steps run for that section only, and files linked from inline content in the page body are added. Both paths produce the same resource schema, which the service worker then downloads.
 
 ## 🧪 Development
 
@@ -138,7 +141,7 @@ moodle-downloader/
 - Panopto videos can only be saved as `.url` shortcuts — CORS blocks direct download 😔
 - Collapsed sidebar sections aren't scanned; expand them first if needed
 - Files linked inside labels and other inline content are only found when you scan that section's own page, not from the dashboard
-- A scan asks Moodle about every file resource, which Moodle may record as you having viewed it
+- A scan asks Moodle about every file resource and opens every assignment page, which Moodle may record as you having viewed them
 - If sub-folders don't appear after download, ensure Chrome's **Ask where to save each file before downloading** setting is disabled
 
 ## 🙏 Credits & acknowledgements

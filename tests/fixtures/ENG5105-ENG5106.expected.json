@@ -116,6 +116,12 @@
           "url": "https://learning.monash.edu/mod/folder/view.php?id=5614276"
         },
         {
+          "name": "W4 Materials - Video presentation [5%]",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614278"
+        },
+        {
           "name": "Week 7 Aspen Assignment",
           "kind": "file",
           "mod": "resource",
@@ -156,6 +162,18 @@
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=6408370"
+        },
+        {
+          "name": "Aspen Freeze Submission (UNGRADED)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614302"
+        },
+        {
+          "name": "TGA-DSC data analysis",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6394886"
         }
       ]
     },
@@ -170,10 +188,100 @@
           "url": "https://learning.monash.edu/mod/lti/view.php?id=5614454"
         },
         {
+          "name": "Materials - Lab Data Analysis Interview [5%]",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614479"
+        },
+        {
+          "name": "Team Contract - (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614480"
+        },
+        {
+          "name": "Standup Week 2 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614481"
+        },
+        {
+          "name": "Standup Week 3 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373781"
+        },
+        {
+          "name": "Standup Week 4 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373782"
+        },
+        {
+          "name": "Standup Week 5 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373783"
+        },
+        {
+          "name": "Standup Week 7 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373784"
+        },
+        {
+          "name": "Standup Week 8 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373785"
+        },
+        {
+          "name": "Standup Week 9 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373787"
+        },
+        {
+          "name": "Standup Week 10 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373788"
+        },
+        {
+          "name": "Standup Week 11 (1%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6373789"
+        },
+        {
+          "name": "Proposal Design Submissions [20%]",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614491"
+        },
+        {
+          "name": "Detail Design Submissions [50%]",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614492"
+        },
+        {
           "name": "CHE5105-6 - Oral Presentation Instructions & Rubrics",
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=5614495"
+        },
+        {
+          "name": "Concept Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614493"
+        },
+        {
+          "name": "Detail Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5614494"
         }
       ]
     },
@@ -228,12 +336,6 @@
       "reason": "restricted"
     },
     {
-      "name": "W4 Materials : Video presentation [5%]",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614278",
-      "reason": "not-a-file"
-    },
-    {
       "name": "Aspen Assessment Week 7 [2%]",
       "mod": null,
       "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614283",
@@ -244,18 +346,6 @@
       "mod": null,
       "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614295",
       "reason": "restricted"
-    },
-    {
-      "name": "Aspen Freeze Submission (UNGRADED)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614302",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "TGA/DSC data analysis",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6394886",
-      "reason": "not-a-file"
     },
     {
       "name": "MECH - W1-W3 - ANSYS: Discovery and ANSYS Meshing - 2%",
@@ -334,96 +424,6 @@
       "mod": null,
       "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614467",
       "reason": "restricted"
-    },
-    {
-      "name": "Materials - Lab Data Analysis Interview [5%]",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614479",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Team Contract - (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614480",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 2 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614481",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 3 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373781",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 4 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373782",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 5 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373783",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 7 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373784",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 8 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373785",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 9 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373787",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 10 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373788",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Standup Week 11 (1%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373789",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Proposal Design Submissions [20%]",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614491",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Detail Design Submissions [50%]",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614492",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Concept Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614493",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Detail Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614494",
-      "reason": "not-a-file"
     }
   ]
 }

@@ -20,9 +20,14 @@ test('every fixture page has a reviewed expected-result file', () => {
 });
 
 test('fixture pages and expected results contain no personal data', () => {
-  for (const name of fs.readdirSync(fixturesDir)) {
-    const findings = findPersonalData(fs.readFileSync(path.join(fixturesDir, name), 'utf8'));
-    assert.deepEqual(findings, [], `${name} still contains personal data`);
+  const files = fs.readdirSync(fixturesDir, { recursive: true, withFileTypes: true })
+    .filter(entry => entry.isFile())
+    .map(entry => path.join(entry.parentPath, entry.name));
+
+  assert.ok(files.length > pages.length);
+  for (const file of files) {
+    const findings = findPersonalData(fs.readFileSync(file, 'utf8'));
+    assert.deepEqual(findings, [], `${path.relative(fixturesDir, file)} still contains personal data`);
   }
 });
 
@@ -31,11 +36,16 @@ test('the sanitizer flags the kinds of personal data it is meant to remove', () 
     '<a href="https://learning.monash.edu/user/profile.php?id=12345">Jane Citizen</a>',
     '<a href="mailto:jane.citizen@monash.edu">jane.citizen@monash.edu</a>',
     '<a href="https://learning.monash.edu/login/logout.php?sesskey=AbCdEf1234">Log out</a>',
-    '<div data-userid="12345"></div>'
+    '<div data-userid="12345"></div>',
+    '<div class="submitted-badge" neth-status="Graded"></div>',
+    '<a href="https://learning.monash.edu/pluginfile.php/9/assignsubmission_file/submission_files/77/My%20report.pdf">x</a>'
   ].join('\n');
 
   const findings = findPersonalData(leaky, ['Jane Citizen | Jane']).join('\n');
-  for (const label of ['email address', 'session key', 'user profile link', 'user id attribute', 'listed name']) {
+  for (const label of [
+    'email address', 'session key', 'user profile link', 'user id attribute', 'listed name',
+    'submission state', 'submitted file'
+  ]) {
     assert.match(findings, new RegExp(label));
   }
 });

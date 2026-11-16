@@ -452,16 +452,136 @@
           "url": "https://learning.monash.edu/mod/lti/view.php?id=5839986"
         },
         {
+          "name": "In-class active participation",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5839989"
+        },
+        {
+          "name": "W5 Pre-workshop task (1%) - Leadership",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840027"
+        },
+        {
+          "name": "W8 pre-workshop task (1.5%) - Written Communication and building business relationships",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840030"
+        },
+        {
+          "name": "W9 Pre-workshop task (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840031"
+        },
+        {
+          "name": "W12 Pre-workshop task (1.5%) - Ethics",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840032"
+        },
+        {
+          "name": "W1 Post-class task (1%) - Success",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840033"
+        },
+        {
+          "name": "W2 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840034"
+        },
+        {
+          "name": "W3 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840035"
+        },
+        {
+          "name": "W4 Post-workshop exercise (2%) - Relationships + Communication",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840036"
+        },
+        {
+          "name": "Week 5 interview (5%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6413426"
+        },
+        {
           "name": "Interview locations - as of 3-9-2026",
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=6462052"
         },
         {
+          "name": "W6 Post-workshop exercise (1%) - Sustainability",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840038"
+        },
+        {
+          "name": "W10 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840042"
+        },
+        {
+          "name": "W11 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840043"
+        },
+        {
+          "name": "Individual assignment (10%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840044"
+        },
+        {
           "name": "Teams - Sem 2 2026 - Updated 9-9-2026",
           "kind": "file",
           "mod": "resource",
           "url": "https://learning.monash.edu/mod/resource/view.php?id=6503217"
+        },
+        {
+          "name": "Team project report",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840046"
+        },
+        {
+          "name": "Team project presentation",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840047"
+        },
+        {
+          "name": "Week 8 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840048"
+        },
+        {
+          "name": "Week 10 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840049"
+        },
+        {
+          "name": "Week 12 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840050"
+        },
+        {
+          "name": "Individual reflection submission (10%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840052"
         }
       ]
     },
@@ -479,66 +599,6 @@
     }
   ],
   "excluded": [
-    {
-      "name": "In-class active participation",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5839989",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W5 Pre-workshop task (1%) - Leadership",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840027",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W8 pre-workshop task (1.5%) - Written Communication and building business relationships",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840030",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W9 Pre-workshop task (2%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840031",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W12 Pre-workshop task (1.5%) - Ethics",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840032",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W1 Post-class task (1%) - Success",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840033",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W2 Post-workshop exercise (2%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840034",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W3 Post-workshop exercise (2%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840035",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W4 Post-workshop exercise (2%) - Relationships + Communication",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840036",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Week 5 interview (5%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=6413426",
-      "reason": "not-a-file"
-    },
     {
       "name": "Monday Morning Week 5",
       "mod": "choice",
@@ -600,75 +660,15 @@
       "reason": "not-a-file"
     },
     {
-      "name": "W6 Post-workshop exercise (1%) - Sustainability",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840038",
-      "reason": "not-a-file"
-    },
-    {
       "name": "W7 Post-workshop (2%) Entrepreneurship MCQ Quiz",
       "mod": "quiz",
       "url": "https://learning.monash.edu/mod/quiz/view.php?id=5840040",
       "reason": "not-a-file"
     },
     {
-      "name": "W10 Post-workshop exercise (2%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840042",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "W11 Post-workshop exercise (2%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840043",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Individual assignment (10%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840044",
-      "reason": "not-a-file"
-    },
-    {
       "name": "W8 quiz Mindfulness (5%)",
       "mod": "quiz",
       "url": "https://learning.monash.edu/mod/quiz/view.php?id=5840045",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Team project report",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840046",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Team project presentation",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840047",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Week 8 Team Progress update",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840048",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Week 10 Team Progress update",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840049",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Week 12 Team Progress update",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840050",
-      "reason": "not-a-file"
-    },
-    {
-      "name": "Individual reflection submission (10%)",
-      "mod": "assign",
-      "url": "https://learning.monash.edu/mod/assign/view.php?id=5840052",
       "reason": "not-a-file"
     },
     {

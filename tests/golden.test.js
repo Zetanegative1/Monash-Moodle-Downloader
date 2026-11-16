@@ -9,9 +9,12 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const { loadFixture, scanAndDownload } = require('./helpers/extension-harness.js');
-const { EMBEDDED_FILE_BYTES, MB, folderFiles, resourceFile } = require('./helpers/fake-moodle.js');
+const { EMBEDDED_FILE_BYTES, MB, assignmentFiles, folderFiles, resourceFile } = require('./helpers/fake-moodle.js');
 
 const UNITS = ['CHE5883-CHE6883', 'ENG5100-ENG6100', 'ENG5105-ENG5106', 'MTE5886-MTE6886'];
+
+// Pages saved from inside a unit. A section page is downloaded without a course folder.
+const SECTION_PAGES = ['ENG5100-ENG6100-assessments'];
 
 const dashboardRuns = new Map();
 function dashboardRun(unit) {
@@ -26,7 +29,7 @@ function dashboardRun(unit) {
 function expectedFiles(expected) {
   const files = [];
   for (const folder of expected.folders) {
-    const base = `${expected.courseFolder}/${folder.name}`;
+    const base = [expected.courseFolder, folder.name].filter(Boolean).join('/');
     for (const item of folder.items) {
       const cmId = new URL(item.url).searchParams.get('id');
       if (item.kind === 'file') {
@@ -36,8 +39,8 @@ function expectedFiles(expected) {
           fileGroup: served.fileGroup,
           bytes: served.bytes
         });
-      } else if (item.kind === 'folder') {
-        for (const served of folderFiles(cmId)) {
+      } else if (item.kind === 'folder' || item.kind === 'attachments') {
+        for (const served of (item.kind === 'folder' ? folderFiles(cmId) : assignmentFiles(cmId))) {
           files.push({
             path: `${base}/${item.name}/${served.relativePath}`,
             fileGroup: served.fileGroup,
@@ -106,7 +109,13 @@ for (const unit of UNITS) {
       assert.equal(courseFolder, expected.courseFolder);
       if (!folderOrder.includes(folder)) folderOrder.push(folder);
     }
-    assert.deepEqual(folderOrder, expected.folders.map(folder => folder.name));
+    // A folder whose only activities are assignments without attachments is never created.
+    const expectedOrder = [];
+    for (const file of expectedFiles(expected)) {
+      const folder = file.path.split('/')[1];
+      if (!expectedOrder.includes(folder)) expectedOrder.push(folder);
+    }
+    assert.deepEqual(folderOrder, expectedOrder);
   });
 
   test(`${unit}: link activities become shortcuts to the activity`, async () => {
@@ -126,6 +135,16 @@ for (const unit of UNITS) {
   test(`${unit}: the UNIT DASHBOARD tab address (section=0) scans like the dashboard`, async () => {
     const { html, expected } = loadFixture(unit);
     const run = await scanAndDownload({ html, url: `${expected.pageUrl}&section=0` });
+    assertDownloads(run, expectedFiles(expected));
+  });
+}
+
+for (const pageName of SECTION_PAGES) {
+  test(`${pageName}: a section page scan downloads exactly the expected files`, async () => {
+    const { html, expected } = loadFixture(pageName);
+    const run = await scanAndDownload({ html, url: expected.pageUrl });
+
+    assert.equal(run.scan.response.resources[0].scanType, 'weekpage');
     assertDownloads(run, expectedFiles(expected));
   });
 }

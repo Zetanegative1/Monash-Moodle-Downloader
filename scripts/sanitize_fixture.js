@@ -46,6 +46,7 @@ function sanitizeDocument(document, options = {}) {
 
   rewriteContactsWidget(document, people);
   rewriteForumWidget(document);
+  removeSubmissionState(document);
   removeInlineProse(document);
   resetCompletionState(document);
   scrubAttributes(document);
@@ -149,12 +150,40 @@ function rewriteForumWidget(document) {
   }
 }
 
+/**
+ * An assignment page shows the saving user's submission, grade and feedback, and
+ * the assessment overview shows a status per task. Only the fact that submission
+ * and feedback files are linked is kept, so tests can prove they are not downloaded.
+ */
+function removeSubmissionState(document) {
+  for (const badge of document.querySelectorAll('.submitted-badge, [neth-status]')) badge.remove();
+
+  const containers = document.querySelectorAll(
+    '.submissionstatustable, .feedback, .gradingsummary, .commentscontainer, [data-region="activity-information"]'
+  );
+  for (const container of containers) {
+    const fileAreas = new Set();
+    for (const link of container.querySelectorAll('a[href*="/pluginfile.php/"]')) {
+      const match = (link.getAttribute('href') || '').match(/^(.*\/pluginfile\.php\/\d+\/[a-z_]+\/[a-z_]+)\//);
+      if (match) fileAreas.add(match[1]);
+    }
+
+    container.replaceChildren();
+    for (const area of fileAreas) {
+      const placeholder = document.createElement('a');
+      placeholder.setAttribute('href', `${area}/0/redacted.pdf?forcedownload=1`);
+      placeholder.textContent = 'redacted.pdf';
+      container.append(placeholder, '\n');
+    }
+  }
+}
+
 // Label / inline-content bodies are free text written by staff; keep the markup and links, drop the prose.
 // Custom HTML blocks are not course content at all, so their bodies go entirely.
 function removeInlineProse(document) {
   for (const body of document.querySelectorAll('.block_html .content')) body.replaceChildren();
 
-  for (const container of document.querySelectorAll('.activity-altcontent')) {
+  for (const container of document.querySelectorAll('.activity-altcontent, #intro .no-overflow')) {
     const walker = document.createTreeWalker(container, 4 /* NodeFilter.SHOW_TEXT */);
     const textNodes = [];
     while (walker.nextNode()) textNodes.push(walker.currentNode);
@@ -205,6 +234,7 @@ function scrubUrlLikeValue(value) {
   let result = value;
   if (/panopto/i.test(result) && /^[a-z]+:\/\//i.test(result)) result = result.replace(/[?#].*$/, '');
   result = result.replace(/([?&])sesskey=[^&#"']*/gi, '$1sesskey=REDACTED');
+  result = result.replace(/([?&])useridlistid=[^&#"']*/gi, '$1useridlistid=0');
   result = result.replace(/(\/user\/(?:profile|view)\.php\?id=)\d+/gi, '$10');
   return result;
 }
@@ -273,6 +303,9 @@ function findPersonalData(html, names = []) {
   report('user profile link', html.match(/\/user\/(?:profile|view)\.php\?id=[1-9]\d*/g) || []);
   report('user id attribute', html.match(/\bdata-user-?id=/gi) || []);
   report('login banner', html.match(/You are logged in as/gi) || []);
+  report('submission state', html.match(/neth-status=|class="[^"]*submitted-badge|useridlistid=(?!0\b)/gi) || []);
+  report('submitted file', (html.match(/\/assign(?:submission|feedback)_[a-z]+\/[a-z_]+\/\d+\/[^"?#\s]+/gi) || [])
+    .filter(file => !/\/0\/redacted\.pdf$/.test(file)));
   report('executable or embedded content', html.match(/<(?:script|style|iframe)\b|\b(?:src|href)="data:/gi) || []);
 
   const aliases = names.flatMap(line => line.split('|')).map(alias => alias.trim()).filter(Boolean);
@@ -327,10 +360,11 @@ function main() {
     throw new Error('usage: sanitize_fixture.js <saved-page.html> <output.html> [--names <names.txt>]');
   }
 
-  const { JSDOM } = require('jsdom');
+  const { JSDOM, VirtualConsole } = require('jsdom');
   const [inputPath, outputPath] = positional;
   const html = fs.readFileSync(inputPath, 'utf8');
-  const dom = new JSDOM(html);
+  // A silent console: saved pages carry megabytes of CSS that jsdom cannot parse and does not need.
+  const dom = new JSDOM(html, { virtualConsole: new VirtualConsole() });
   const { peopleCount } = sanitizeDocument(dom.window.document, {
     names,
     sourceUrl: detectSourceUrl(html)
