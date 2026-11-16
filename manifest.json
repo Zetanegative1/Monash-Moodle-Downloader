@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Monash Moodle Downloader",
-  "version": "4.6.1",
-  "description": "Batch-download Monash Moodle course resources, auto-organized by week.",
+  "version": "4.7.0",
+  "description": "Batch-download Monash Moodle course resources, auto-organized by section.",
   "permissions": [
     "downloads",
     "activeTab",
@@ -27,7 +27,13 @@
   "content_scripts": [
     {
       "matches": ["https://learning.monash.edu/*"],
-      "js": ["content.js"],
+      "js": [
+        "lib/shared.js",
+        "lib/moodle-page.js",
+        "lib/download-plan.js",
+        "lib/resource-resolver.js",
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],

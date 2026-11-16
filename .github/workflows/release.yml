@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install test dependencies
+        run: npm ci
+
       - name: Run JavaScript checks
         run: |
           node --check content.js
