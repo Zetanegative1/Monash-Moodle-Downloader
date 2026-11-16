@@ -1,186 +1,64 @@
-# 下载文件夹问题调试指南
+# 排错指南
 
-## ✅ Chrome 插件完全支持创建子文件夹！
+先做两件事，多数问题到此为止：
 
-Chrome 的 `chrome.downloads.download()` API 的 `filename` 参数可以包含路径：
+1. 在 `chrome://extensions/` 点扩展卡片上的刷新按钮。
+2. 刷新 Moodle 页面，确认已登录，再 Scan。
+
+## 文件没有进子文件夹
+
+`chrome.downloads.download()` 的 `filename` 可以带路径，Chrome 会自动创建文件夹。文件全部落在 `Downloads` 根目录时，按顺序检查：
+
+1. Chrome 设置 → 下载内容 → **下载前询问每个文件的保存位置**必须关闭。
+2. 其他管理下载的扩展可能改写文件名，先停用它们再试。
+3. 在 service worker 控制台（见下文）运行下面的代码，看是否生成 `TestFolder/Sub/` 子文件夹：
+
 ```javascript
-filename: 'ENG5001/Week 1/file.pdf'
-```
-这会自动创建 `ENG5001/` 和 `Week 1/` 文件夹。
-
----
-
-## 🔍 如何查看下载日志
-
-### 1. 打开 Background Service Worker 控制台
-
-1. 访问 `chrome://extensions/`
-2. 找到 "Monash Moodle Downloader"
-3. 点击 "Service Worker" 蓝色链接
-4. 会打开一个开发者工具窗口
-
-### 2. 在 Service Worker 控制台中查看日志
-
-点击"一键下载全部"后，您应该看到：
-
-```
-[Background] 扫描类型: courseindex
-[Background] Unit首页 - Week编号: 1 文件夹: Week 1
-[Background] 周 Week 1 包含 5 个资源
-[Background] 下载文件:
-  - URL: https://learning.monash.edu/mod/resource/...
-  - 文件名: Reading_Notes.pdf
-  - 完整路径: ENG5001/Week 1/Reading_Notes.pdf
-  - 相对路径: ENG5001/Week 1
-[Background] 下载任务已添加，ID: 1234
-[Background] 总共添加了 15 个下载任务
-```
-
-### 3. 验证下载路径
-
-检查下载管理页面：
-1. 访问 `chrome://downloads/`
-2. 查看文件的"完整路径"列
-3. 应该显示：`Downloads/ENG5001/Week 1/Reading_Notes.pdf`
-
----
-
-## 🧪 测试步骤
-
-### 重新加载扩展
-```
-chrome://extensions/ → 点击刷新 🔄
-```
-
-### 刷新 Moodle 页面
-```
-在 Moodle 页面按 F5
-```
-
-### 测试 Unit 首页下载
-
-1. 访问课程首页
-2. 点击扩展 → "扫描资源"
-3. 查看扫描结果（应该显示 Week 1, Week 2 等）
-4. 点击"一键下载全部"
-5. **立即打开 Service Worker 控制台**查看日志
-6. 查看下载文件夹：应该看到 `Downloads/ENG5001/Week 1/`, `Week 2/` 等文件夹
-
----
-
-## 🐛 如果仍然没有创建文件夹
-
-### 可能原因 1：路径构建问题
-
-**症状**：日志显示 `完整路径` 正确，但文件仍在 Downloads 根目录
-
-**检查**：在 Service Worker 控制台运行：
-```javascript
-// 测试下载路径
 chrome.downloads.download({
-  url: 'https://example.com/test.txt',
-  filename: 'TestFolder/Week1/test.txt',
+  url: 'data:text/plain,test',
+  filename: 'TestFolder/Sub/test.txt',
   saveAs: false
-}, (id) => console.log('测试下载ID:', id));
-```
-然后检查下载文件夹是否有 `TestFolder/Week1/` 子文件夹。
-
-### 可能原因 2：`weekNumber` 未定义
-
-**症状**：日志显示 `Week页面 - 文件夹: xxx` 而不是 `Unit首页 - Week编号`
-
-**原因**：`week.weekNumber` 为 `undefined`
-
-**检查**：在页面控制台运行：
-```javascript
-// 测试扫描结果
-chrome.runtime.sendMessage({ action: 'scanResources' }, (response) => {
-  if (response && response.success) {
-    const week = response.resources[0]?.weeks[0];
-    console.log('Week对象:', week);
-    console.log('weekNumber:', week.weekNumber);
-    console.log('scanType:', response.resources[0].scanType);
-  }
 });
 ```
 
-### 可能原因 3：Chrome 下载位置设置
+子文件夹没有出现，说明问题在 Chrome 设置或其他扩展，不在本扩展。
 
-**症状**：文件保存在完全不同的位置
+## 扫描结果为空或不完整
 
-**解决方案**：
-1. 打开 Chrome 设置
-2. 搜索"下载"
-3. 查看"位置"设置
-4. 确保"下载前询问每个文件的保存位置"是**关闭**的
+| 现象 | 处理 |
+| --- | --- |
+| `No resources found` | 确认当前是 unit 页面而不是 `My units`；刷新后重试 |
+| 只扫到一个章节 | 地址栏带 `&section=N` 时只扫当前章节；回到 Unit dashboard 扫整个 unit |
+| 少了某些章节 | 打开左侧 course index 抽屉，展开折叠的章节后重试 |
+| label 正文里链接的文件没有出现 | 这些文件只在对应章节自己的页面上才能扫到，进入该章节页面再 Scan |
+| 带锁的条目没有出现 | 正常，无权访问的条目不会下载 |
+| quiz / forum / choice 没有出现 | 正常，这些活动没有可下载的文件 |
+| 某个作业没有出现 | 该作业的说明里没有附件；有附件却没出现时，按「反馈问题」提供信息 |
 
----
+## 文件名或类型不对
 
-## 📊 预期结果对比
+| 现象 | 原因 |
+| --- | --- |
+| 文件没有扩展名 | 扫描时 Moodle 没有返回文件信息（超时或会话过期）。重新登录后再扫 |
+| 列表里类型显示 `FILE` | 同上 |
+| 出现 `Name (1).pdf` | 同一文件夹里有重名文件，Chrome 自动改名 |
+| 文件夹显示为一个 `.zip` | Moodle 文件夹页面无法解析，退回到整包下载 |
+| 弹窗提示有文件夹或作业未能完整展开 | 对应页面请求失败，通常是会话过期或网络问题，重新扫描 |
 
-### ✅ 正确的下载日志
+## 查看日志
 
-```
-[Background] 扫描类型: courseindex
-[Background] Unit首页 - Week编号: 2 文件夹: Week 2
-[Background] 周 Week 2 包含 3 个资源
-[Background] 下载文件:
-  - 完整路径: ENG5001/Week 2/Python_101.pdf
-  - 相对路径: ENG5001/Week 2
-[Background] 下载任务已添加，ID: 1234
-```
+**后台（下载）**：`chrome://extensions/` → 本扩展 → 点击 **Service Worker**，打开的开发者工具里看 Console。下载失败时会有 `Failed to download [文件名]`。
 
-**预期文件结构**：
-```
-Downloads/
-└── ENG5001/
-    ├── Week 1/
-    │   ├── file1.pdf
-    │   └── file2.pptx
-    └── Week 2/
-        ├── Python_101.pdf
-        └── file4.docx
-```
+**页面（扫描）**：在 Moodle 页面按 F12 → Console。扫描失败的原因也会显示在弹窗的状态栏里。
 
-### ❌ 错误情况
+**下载记录**：`chrome://downloads/` 可以看到每个文件的实际保存路径和失败原因。
 
-```
-[Background] Week页面 - 文件夹: Week_2_-_Intro
-[Background] 周 Week_2_-_Intro 包含 3 个资源
-```
+## 反馈问题
 
-**问题**：使用的是 Week 页面扫描，不是 Unit 首页扫描
+到 [Issues](https://github.com/Zetanegative1/Monash-Moodle-Downloader/issues) 提交，并附上：
 
-**结果**：文件保存到 `Downloads/ENG5001/Week_2_-_Intro/`
+1. 扩展版本号和当前页面的地址（unit dashboard 还是章节页面）。
+2. 期望出现但没有出现的条目名称，或者出错的文件名。
+3. Service Worker 控制台里的报错。
 
----
-
-## 💡 关键代码逻辑
-
-```javascript
-// background.js
-if (scanType === 'courseindex' && week.weekNumber !== undefined) {
-  // Unit首页：使用 "Week n" 格式
-  folderName = `Week ${week.weekNumber}`;  // 产生 "Week 1", "Week 2" 等
-} else {
-  // Week页面：使用周次原始名称
-  folderName = week.name;  // 产生 "Week_2_-_Introduction_to_Python" 等
-}
-
-// 最终路径
-const fullPath = `${courseName}/${folderName}/${filename}`;
-// 结果：ENG5001/Week 1/Reading_Notes.pdf
-```
-
----
-
-## 🔧 如果问题仍然存在
-
-请提供以下信息：
-
-1. **Service Worker 控制台日志**（完整截图或复制文本）
-2. **下载文件的完整路径**（从 chrome://downloads/ 查看）
-3. **扫描类型**（是 Unit 首页还是 Week 页面）
-4. **文件实际保存位置**（在文件管理器中的完整路径）
-
-这些信息将帮助我准确定位问题！
+页面结构不同导致的问题，最有用的是把该页面保存成单个 HTML 文件。提交前用 `scripts/sanitize_fixture.js` 去掉个人信息，用法见 [README](../README.md#-development)。

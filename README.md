@@ -8,6 +8,15 @@
 
 ---
 
+## 🆕 New in 4.7.0
+
+- Scans **every section** of a unit — `Unit information`, each week, `Assessments`, `Support` — not only the weeks under `Learning`.
+- Works on units that arrange their sections differently, because it reads Moodle's page structure instead of section titles.
+- Files keep their **real extension** (`Week 7 - Lecture slides.pdf`, not `.php`).
+- **Assignments** with attached files get a folder each; quizzes, forums and other online-only activities are left out.
+
+Full list in the [changelog](./docs/CHANGELOG.md).
+
 ## ✨ What it does
 
 - 🎯 **Two scan modes** — Unit Dashboard (grab everything, every section) or a single section page (just this week, thanks)
@@ -54,15 +63,23 @@ python scripts/package_extension.py
 **On a Unit Dashboard** — Click the icon → **Scan** → **Download All**
 Downloads everything published in every section into:
 ```
-Downloads/<Full Course Name>/Unit information/…
-Downloads/<Full Course Name>/Week 1/…
-Downloads/<Full Course Name>/Assessments/…
+Downloads/<Full Course Name>/
+├── Unit information/
+│   └── Leganto Reading List.url
+├── Week 1/
+│   ├── Lecture 1 - Crystal Structure.pdf
+│   └── Lecture notes/              ← a Moodle folder, expanded
+│       └── …
+└── Assessments/
+    ├── Assignment Cover Sheet.docx
+    └── Team project report/        ← an assignment with attachments
+        └── …
 ```
 Sections whose title starts with `Week N` are saved as `Week N`; the others keep their title. Groups inside a section page (_Own-time_, _Real-time_, _Wrap-up_) are flattened into it.
 
-**On a single section page** — Same three clicks. Only that section downloads, into:
+**On a single section page** (the address contains `&section=N`) — Same three clicks. Only that section downloads, into:
 ```
-Downloads/Week N/…
+Downloads/<Section>/…
 ```
 
 **Assignments** — each assignment with attached files gets its own folder, e.g. `Assessments/Team project report/…`. Your own submissions and feedback files are never downloaded.
@@ -143,6 +160,16 @@ moodle-downloader/
 - Files linked inside labels and other inline content are only found when you scan that section's own page, not from the dashboard
 - A scan asks Moodle about every file resource and opens every assignment page, which Moodle may record as you having viewed them
 - If sub-folders don't appear after download, ensure Chrome's **Ask where to save each file before downloading** setting is disabled
+
+## 📚 Documentation
+
+| Document | What it covers |
+| --- | --- |
+| [docs/INSTALL.md](./docs/INSTALL.md) | 安装和使用（中文） |
+| [docs/DEBUG.md](./docs/DEBUG.md) | 排错指南（中文） |
+| [docs/CHANGELOG.md](./docs/CHANGELOG.md) | Release history |
+| [docs/MANUAL_TESTING.md](./docs/MANUAL_TESTING.md) | Checks that need a real Moodle login |
+| [docs/fixtures-expected/](./docs/fixtures-expected/README.md) | Structure of the sample units and the download rules derived from them |
 
 ## 🙏 Credits & acknowledgements
 

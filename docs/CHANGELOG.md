@@ -26,6 +26,8 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Assignments are opened like folders: files attached to the assignment description are downloaded into a folder named after the assignment. Assignments without attachments produce nothing, and submission and feedback files are never touched.
 - Four sanitized unit dashboards, one section page and one assignment page as test fixtures, golden tests that drive the extension through its message interfaces, and `scripts/sanitize_fixture.js` for adding more.
 - `docs/MANUAL_TESTING.md` with the checks that need a real Moodle login.
+- The popup counter is labelled `Sections` instead of `Weeks`.
+- `docs/INSTALL.md` and `docs/DEBUG.md` rewritten for the current extension.
 
 ## [4.6.1] — 2026-08-10
 
