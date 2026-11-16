@@ -10,7 +10,7 @@ test('manifest remains valid MV3 JSON with the required permissions', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
 
   assert.equal(manifest.manifest_version, 3);
-  assert.equal(manifest.version, '4.6.1');
+  assert.equal(manifest.version, '4.7.0');
   assert.ok(manifest.permissions.includes('downloads'));
   assert.ok(manifest.permissions.includes('storage'));
   assert.ok(manifest.host_permissions.includes('https://learning.monash.edu/*'));

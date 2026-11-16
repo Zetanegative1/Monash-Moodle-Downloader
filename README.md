@@ -1,8 +1,8 @@
 # 📚 Monash Moodle Downloader
 
-> One-click batch download for Monash University Moodle course resources — auto-sorted by week. Stop right-clicking 40 PDFs the night before finals. 😮‍💨
+> One-click batch download for Monash University Moodle course resources — auto-sorted by section. Stop right-clicking 40 PDFs the night before finals. 😮‍💨
 
-[![Version](https://img.shields.io/badge/version-4.6.1-6366f1)](./docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-4.7.0-6366f1)](./docs/CHANGELOG.md)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-8b5cf6)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
@@ -10,12 +10,13 @@
 
 ## ✨ What it does
 
-- 🎯 **Two scan modes** — Unit Dashboard (grab everything, every week) or single Week page (just this week, thanks)
-- 📁 **Auto-foldered** — files land in `Week 1/`, `Week 2/`, … so your Downloads folder stays sane
+- 🎯 **Two scan modes** — Unit Dashboard (grab everything, every section) or a single section page (just this week, thanks)
+- 📁 **Auto-foldered** — one folder per Moodle section, in Moodle's order: `Unit information/`, `Week 1/`, `Week 2/`, … `Assessments/`
+- 🧭 **Works across unit layouts** — reads Moodle's own page structure instead of looking for particular section titles
 - 🗂️ **Moodle folders expanded** — files inside _Lecture notes_, _After class reading_, and similar activities keep their folder structure
 - 📏 **Size limits** — choose 10 MB, 20 MB, 50 MB, or Unlimited; oversized files are shown but skipped
 - 🎛️ **Type filters** — independently include or exclude PDFs, presentations, documents, spreadsheets, video, audio, images, archives, links, and other files
-- 📄 **Handles the usual suspects** — PDF, PPT, DOC, MP4; Panopto and external links get saved as `.url` shortcuts
+- 📄 **Handles the usual suspects** — PDF, PPT, DOC, MP4, saved under the activity's name with the file's real extension; external links, pages and LTI tools (Panopto, reading lists) get saved as `.url` shortcuts
 - 🌐 **Bilingual UI** — English by default, one-click switch to 中文
 - ⚡ **Sidebar-powered** — pulls every resource from the course index without navigating away
 
@@ -50,16 +51,20 @@ python scripts/package_extension.py
 ## 📖 How to use
 
 **On a Unit Dashboard** — Click the icon → **Scan** → **Download All**
-Downloads everything published across every week into:
+Downloads everything published in every section into:
 ```
+Downloads/<Full Course Name>/Unit information/…
 Downloads/<Full Course Name>/Week 1/…
-Downloads/<Full Course Name>/Week 2/…
+Downloads/<Full Course Name>/Assessments/…
 ```
+Sections whose title starts with `Week N` are saved as `Week N`; the others keep their title. Groups inside a section page (_Own-time_, _Real-time_, _Wrap-up_) are flattened into it.
 
-**On a single Week page** — Same three clicks. Only that week downloads, into:
+**On a single section page** — Same three clicks. Only that section downloads, into:
 ```
 Downloads/Week N/…
 ```
+
+**What is skipped** — assignments, quizzes, forums, choices and activities you don't have access to.
 
 **Language toggle** — Hit the `EN / 中文` pill in the header. Your pick sticks.
 
@@ -69,11 +74,35 @@ Downloads/Week N/…
 
 | Layer | File | Job |
 | --- | --- | --- |
-| Content script | [`content.js`](./content.js) | Walks the Moodle DOM and returns a structured resource tree |
+| Content script | [`content.js`](./content.js) | Answers the popup's scan request by running the three steps below |
+| ↳ page reader | [`lib/moodle-page.js`](./lib/moodle-page.js) | Reads the course index and the page body into a section tree, using Moodle's `data-for` / `data-id` / `modtype_*` attributes |
+| ↳ download plan | [`lib/download-plan.js`](./lib/download-plan.js) | Decides which sections become folders and what happens to each module type |
+| ↳ resolver | [`lib/resource-resolver.js`](./lib/resource-resolver.js) | Opens folders, finds each file's real name, type and size, applies the settings |
+| Shared rules | [`lib/shared.js`](./lib/shared.js) | File naming and file-type groups, used by the content scripts and the service worker |
 | Service worker | [`background.js`](./background.js) | Fires off `chrome.downloads.download` tasks with the right folder paths |
 | Popup UI | [`popup.html`](./popup.html) / [`popup.js`](./popup.js) / [`popup.css`](./popup.css) | Renders downloads and the embedded settings view, handles actions and bilingual toggle |
 
-**Scanning, in one paragraph:** On a Unit Dashboard, it finds the `Learning` section in the sidebar, treats each direct child as a week, and flattens nested groups like _Own-time_ / _Real-time_ into that week. Moodle folder activities are opened in the background with limited concurrency and expanded into their real files. When a size limit is enabled, lightweight header requests determine which files should be skipped. On a single Week page, the same logic is applied only to that week. Both paths converge on the same resource schema, which the service worker then downloads.
+**Scanning, in one paragraph:** On a Unit Dashboard the whole course index is read as a tree. Every section with its own page becomes a folder and the sections shown inside that page are flattened into it. Each activity is handled by its Moodle module type: `resource` is downloaded, `folder` is opened in the background and expanded into its real files, `url` / `page` / `lti` become shortcuts, and everything else is skipped. For each `resource` one lightweight header request tells the extension the real file name, type and size, which also drives the size limit and type filters. On a section page the same steps run for that section only, and files linked from inline content in the page body are added. Both paths produce the same resource schema, which the service worker then downloads.
+
+## 🧪 Development
+
+The extension has no runtime dependencies and no build step. Tests need Node 22+ and `jsdom`:
+
+```bash
+npm install
+```
+
+```bash
+npm test
+```
+
+`tests/fixtures/` holds saved unit pages with personal data removed, each next to a reviewed `<unit>.expected.json`; `tests/golden.test.js` checks that a scan produces exactly those downloads. To add a unit, save its page as a single HTML file and run:
+
+```bash
+node scripts/sanitize_fixture.js saved-page.html tests/fixtures/<unit>.html --names names.local.txt
+```
+
+`names.local.txt` lists people named in activity titles, one per line; keep it out of git. Checks that need a real Moodle login are in [docs/MANUAL_TESTING.md](./docs/MANUAL_TESTING.md).
 
 ## 📂 Project layout
 
@@ -82,10 +111,16 @@ moodle-downloader/
 ├── manifest.json
 ├── background.js
 ├── content.js
+├── lib/
+│   └── shared.js · moodle-page.js · download-plan.js · resource-resolver.js
 ├── popup.html · popup.css · popup.js
 ├── scripts/
-│   └── package_extension.py
+│   ├── package_extension.py
+│   └── sanitize_fixture.js
 ├── tests/
+│   ├── fixtures/
+│   └── helpers/
+├── package.json
 ├── .github/
 │   └── workflows/release.yml
 ├── icons/
@@ -93,13 +128,17 @@ moodle-downloader/
 └── docs/
     ├── CHANGELOG.md
     ├── INSTALL.md
-    └── DEBUG.md
+    ├── DEBUG.md
+    ├── MANUAL_TESTING.md
+    └── fixtures-expected/
 ```
 
 ## ⚠️ Known quirks
 
 - Panopto videos can only be saved as `.url` shortcuts — CORS blocks direct download 😔
 - Collapsed sidebar sections aren't scanned; expand them first if needed
+- Files linked inside labels and other inline content are only found when you scan that section's own page, not from the dashboard
+- A scan asks Moodle about every file resource, which Moodle may record as you having viewed it
 - If sub-folders don't appear after download, ensure Chrome's **Ask where to save each file before downloading** setting is disabled
 
 ## 🙏 Credits & acknowledgements
