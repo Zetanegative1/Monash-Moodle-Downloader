@@ -27,7 +27,13 @@
   "content_scripts": [
     {
       "matches": ["https://learning.monash.edu/*"],
-      "js": ["content.js"],
+      "js": [
+        "lib/shared.js",
+        "lib/moodle-page.js",
+        "lib/download-plan.js",
+        "lib/resource-resolver.js",
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],

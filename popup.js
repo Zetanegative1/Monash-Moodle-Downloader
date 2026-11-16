@@ -313,8 +313,8 @@ function renderResources(resources) {
     weekContainer.className = 'week-container';
 
     course.weeks.forEach(week => {
-      const weekDisplayName = (week.weekNumber !== undefined && scanType === 'courseindex')
-        ? `Week ${week.weekNumber}` : week.name;
+      const weekDisplayName = week.folderName
+        || ((week.weekNumber !== undefined && scanType === 'courseindex') ? `Week ${week.weekNumber}` : week.name);
       const weekSkipped = week.resources.filter(resource => resource.downloadable === false).length;
 
       const weekItem = document.createElement('div');
