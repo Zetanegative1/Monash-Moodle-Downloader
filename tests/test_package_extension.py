@@ -25,7 +25,7 @@ class PackageExtensionTests(unittest.TestCase):
                 self.assertEqual(archive.namelist(), list(PACKAGE_EXTENSION.PACKAGE_FILES))
                 manifest = json.loads(archive.read("manifest.json"))
 
-            self.assertEqual(manifest["version"], "4.6.1")
+            self.assertEqual(manifest["version"], "4.7.0")
             self.assertNotIn("README.md", PACKAGE_EXTENSION.PACKAGE_FILES)
             self.assertFalse(any(name.startswith("tests/") for name in archive.namelist()))
 

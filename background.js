@@ -1,3 +1,9 @@
+if (typeof importScripts === 'function') importScripts('lib/shared.js');
+
+const { sanitizePathSegment, withExtension } = typeof module !== 'undefined' && module.exports
+  ? require('./lib/shared.js')
+  : globalThis.MoodleDownloader;
+
 if (typeof chrome !== 'undefined' && chrome.runtime?.onMessage) {
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action !== 'downloadAll') return false;
@@ -18,7 +24,7 @@ async function handleDownloadAll(resources) {
       const scanType = course.scanType || 'weekpage';
 
       for (const week of course.weeks) {
-        const folderName = week.weekNumber !== undefined ? `Week ${week.weekNumber}` : week.name;
+        const folderName = getWeekFolderName(week);
         // courseindex: nest under course folder; weekpage: download directly to week folder
         const path = scanType === 'courseindex' ? `${course.name}/${folderName}` : folderName;
 
@@ -57,7 +63,7 @@ async function downloadResource(resource, path) {
     } else if (resource.type === 'URL') {
       await createUrlShortcut(resource.name, resource.url, path);
     } else {
-      await downloadFile(resource.url, resource.name, path);
+      await downloadFile(resource.url, resource.name, path, resource.extension);
     }
     return true;
   } catch (error) {
@@ -66,13 +72,9 @@ async function downloadResource(resource, path) {
   }
 }
 
-async function downloadFile(url, filename, path) {
+async function downloadFile(url, filename, path, extension) {
   return new Promise((resolve, reject) => {
-    let finalFilename = filename;
-    if (!hasFileExtension(finalFilename)) {
-      const ext = new URL(url).pathname.match(/\.([a-z0-9]{2,5})$/i);
-      if (ext) finalFilename += '.' + ext[1];
-    }
+    const finalFilename = withExtension(filename, extension || getDownloadableExtension(url, filename));
 
     chrome.downloads.download({
       url,
@@ -95,13 +97,20 @@ function appendFolderPath(basePath, folderPath) {
   return safeSegments.length > 0 ? `${basePath}/${safeSegments.join('/')}` : basePath;
 }
 
-function sanitizePathSegment(value) {
-  return String(value || '')
-    .trim()
-    .replace(/[<>:"/\\|?*\u0000-\u001F]/g, '-')
-    .replace(/\s+/g, ' ')
-    .replace(/[. ]+$/g, '')
-    .substring(0, 120);
+function getWeekFolderName(week) {
+  if (week.folderName) return sanitizePathSegment(week.folderName) || 'Unknown';
+  return week.weekNumber !== undefined ? `Week ${week.weekNumber}` : week.name;
+}
+
+// A Moodle script address (view.php, pluginfile.php) says nothing about the file behind it.
+function getDownloadableExtension(url, filename) {
+  if (hasFileExtension(filename)) return '';
+  try {
+    const match = new URL(url).pathname.match(/\.([a-z0-9]{2,5})$/i);
+    return match && match[1].toLowerCase() !== 'php' ? match[1] : '';
+  } catch (error) {
+    return '';
+  }
 }
 
 function hasFileExtension(filename) {
@@ -148,6 +157,7 @@ if (typeof chrome !== 'undefined' && chrome.contextMenus) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     appendFolderPath,
+    getDownloadableExtension,
     handleDownloadAll,
     hasFileExtension,
     sanitizePathSegment

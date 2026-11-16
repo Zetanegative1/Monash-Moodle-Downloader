@@ -18,22 +18,22 @@ const TRANSLATIONS = {
     scanBtn: 'Scan',
     downloadBtn: 'Download All',
     clearBtn: 'Clear',
-    statWeeks: 'Weeks',
+    statWeeks: 'Sections',
     statResources: 'Files',
     statSkipped: 'Skipped',
     loading: 'Scanning page resources...',
-    loadingFolders: 'Opening Moodle folders ({current}/{total})...',
+    loadingFolders: 'Opening Moodle folders and assignments ({current}/{total})...',
     loadingSizes: 'Checking file details ({current}/{total})...',
     emptyTitle: 'No resources scanned yet',
     emptyHint1: 'On a Unit Dashboard: downloads every published file across all weeks.',
     emptyHint2: 'On a single Week page: downloads only that week\u2019s resources.',
     scanTypeIndex: '📚 Unit Homepage (All Sections)',
-    scanTypePage: '📖 Week Page (Current Section)',
-    pathIndex: '📁 Path: Downloads/{course}/Week 1/, Week 2/, ...',
-    pathPage: '📁 Path: Downloads/Week N/filename',
+    scanTypePage: '📖 Section Page (Current Section)',
+    pathIndex: '📁 Path: Downloads/{course}/<section>/filename',
+    pathPage: '📁 Path: Downloads/<section>/filename',
     statusInit: 'Initializing...',
     statusFound: 'Scan complete: {n} files, {skipped} skipped',
-    statusFoundWarnings: 'Scan complete with {n} folder warning(s)',
+    statusFoundWarnings: 'Scan complete with {n} warning(s)',
     statusNone: 'No resources found',
     statusScanFail: 'Scan failed: ',
     statusDownloading: 'Starting download...',
@@ -47,7 +47,7 @@ const TRANSLATIONS = {
     sizeUnknown: 'Size unknown',
     sizeOverLimit: 'Over size limit',
     typeExcluded: 'Excluded in settings',
-    folderWarnings: '{n} Moodle folder(s) could not be fully expanded; fallback items are shown.',
+    folderWarnings: '{n} Moodle folder(s) or assignment(s) could not be fully opened; files may be missing or shown as a ZIP fallback.',
     backTitle: 'Back to downloader',
     sizeTitle: 'Maximum file size',
     sizeDescription: 'The limit applies to each file. Unknown-size files are skipped when a limit is enabled.',
@@ -78,22 +78,22 @@ const TRANSLATIONS = {
     scanBtn: '扫描资源',
     downloadBtn: '一键下载',
     clearBtn: '清空',
-    statWeeks: '周次',
+    statWeeks: '章节',
     statResources: '资源',
     statSkipped: '跳过',
     loading: '正在扫描页面资源...',
-    loadingFolders: '正在展开 Moodle 文件夹（{current}/{total}）...',
+    loadingFolders: '正在展开 Moodle 文件夹和作业（{current}/{total}）...',
     loadingSizes: '正在检测文件类型与大小（{current}/{total}）...',
     emptyTitle: '尚未扫描任何资源',
     emptyHint1: '在 Unit Dashboard 页使用：一次性下载全部已发布的周次资源。',
     emptyHint2: '在单个 Week 页面使用：仅下载当前周的资源。',
     scanTypeIndex: '📚 Unit首页（全部章节）',
-    scanTypePage: '📖 Week页面（当前章节）',
-    pathIndex: '📁 路径: Downloads/{course}/Week 1/, Week 2/, ...',
-    pathPage: '📁 路径: Downloads/Week N/文件名',
+    scanTypePage: '📖 章节页面（当前章节）',
+    pathIndex: '📁 路径: Downloads/{course}/<章节>/文件名',
+    pathPage: '📁 路径: Downloads/<章节>/文件名',
     statusInit: '正在初始化...',
     statusFound: '扫描完成：{n} 个文件，跳过 {skipped} 个',
-    statusFoundWarnings: '扫描完成，但有 {n} 个文件夹警告',
+    statusFoundWarnings: '扫描完成，但有 {n} 个警告',
     statusNone: '未找到任何课程资源',
     statusScanFail: '扫描失败: ',
     statusDownloading: '开始下载...',
@@ -107,7 +107,7 @@ const TRANSLATIONS = {
     sizeUnknown: '大小未知',
     sizeOverLimit: '超过大小上限',
     typeExcluded: '已在设置中排除',
-    folderWarnings: '有 {n} 个 Moodle 文件夹未能完整展开，列表中已显示降级项。',
+    folderWarnings: '有 {n} 个 Moodle 文件夹或作业未能完整展开，部分文件可能缺失或以 ZIP 降级项显示。',
     backTitle: '返回下载器',
     sizeTitle: '单文件大小上限',
     sizeDescription: '限制针对每个文件；启用大小限制时，大小未知的文件会被跳过。',
@@ -313,8 +313,8 @@ function renderResources(resources) {
     weekContainer.className = 'week-container';
 
     course.weeks.forEach(week => {
-      const weekDisplayName = (week.weekNumber !== undefined && scanType === 'courseindex')
-        ? `Week ${week.weekNumber}` : week.name;
+      const weekDisplayName = week.folderName
+        || ((week.weekNumber !== undefined && scanType === 'courseindex') ? `Week ${week.weekNumber}` : week.name);
       const weekSkipped = week.resources.filter(resource => resource.downloadable === false).length;
 
       const weekItem = document.createElement('div');
@@ -397,7 +397,10 @@ async function scanResources() {
       });
     } catch {
       showStatus(t('statusInit'), 'info');
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: chrome.runtime.getManifest().content_scripts.flatMap(entry => entry.js)
+      });
       await new Promise(r => setTimeout(r, 500));
       response = await chrome.tabs.sendMessage(tab.id, {
         action: 'scanResources',

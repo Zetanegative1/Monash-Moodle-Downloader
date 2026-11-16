@@ -1,0 +1,693 @@
+{
+  "unit": "ENG5100-ENG6100",
+  "pageUrl": "https://learning.monash.edu/course/view.php?id=45384",
+  "courseFolder": "ENG5100-ENG6100 - Professional engineer in organisation and society - S2 2026",
+  "folders": [
+    {
+      "name": "Unit information",
+      "section": "Unit information",
+      "items": [
+        {
+          "name": "Leganto Reading List",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5839678"
+        }
+      ]
+    },
+    {
+      "name": "Week 1",
+      "section": "Week 1 - Strategic Thinking & Defining Success",
+      "items": [
+        {
+          "name": "Week 1 lecture pdf",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839701"
+        },
+        {
+          "name": "W1 Post-class task (1%) - Success",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839707"
+        },
+        {
+          "name": "Melbourne makes history as world’s top city in global list",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839709"
+        },
+        {
+          "name": "What are Australian values",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839710"
+        },
+        {
+          "name": "Millennials have far poorer mental health than previous generations- study",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839712"
+        }
+      ]
+    },
+    {
+      "name": "Week 2",
+      "section": "Week 2 - Mindfulness (Introduction), Strategic Thinking (cont’d), Strategic Thinking Flowchart, Roles of Engineers",
+      "items": [
+        {
+          "name": "W2_S2-2026_ Strategies to retain learning content through Active Learning",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6382992"
+        },
+        {
+          "name": "Week 2 Person 1 lecture pdf",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839725"
+        },
+        {
+          "name": "Prof Person 2 Lectures",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839727"
+        },
+        {
+          "name": "W2 Post-workshop exercise (2%)",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839737"
+        },
+        {
+          "name": "Strategic thinking flowchart",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839739"
+        },
+        {
+          "name": "Resources to support your mindfulness practice",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839743"
+        },
+        {
+          "name": "Reflective writing",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839745"
+        }
+      ]
+    },
+    {
+      "name": "Week 3",
+      "section": "Week 3 - Strategic Thinking (cont'd), Importance of Culture, Critical Thinking, Importance of Why, Credible Referencing",
+      "items": [
+        {
+          "name": "Week 3 lecture pdf",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839752"
+        },
+        {
+          "name": "Individual Assignment (10%, due is 4 September)",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839754"
+        },
+        {
+          "name": "W3 Post-workshop exercise (2%)",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839756"
+        },
+        {
+          "name": "What are Australian values",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839759"
+        },
+        {
+          "name": "CEO Update- Why so many Australians believe our social and intergenerational compact is broken",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839760"
+        },
+        {
+          "name": "Pauline Hanson exploiting the frustrations of Australians who have been ‘left behind’, Labor says",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839762"
+        },
+        {
+          "name": "How great leaders inspire action - Simon Sinek",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839763"
+        }
+      ]
+    },
+    {
+      "name": "Week 4",
+      "section": "Week 4 - Teams & Teamwork",
+      "items": [
+        {
+          "name": "Week 4 Person 1's lecture PPT slides-PDF",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6445366"
+        },
+        {
+          "name": "Student Success Access",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6445368"
+        },
+        {
+          "name": "Week 4 Person 2 lecture - Mindfulness slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839776"
+        },
+        {
+          "name": "Mindfulness practices",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839777"
+        },
+        {
+          "name": "W4 Post-workshop exercise (2%) - Relationships + Communication",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839785"
+        },
+        {
+          "name": "What Differences Make a Difference The Promise and Reality of Diverse Teams in Organizations",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839787"
+        },
+        {
+          "name": "Managing People from 5 Generations",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839788"
+        },
+        {
+          "name": "Gender Differences- 6 Fascinating Differences Between Men and Women",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839791"
+        }
+      ]
+    },
+    {
+      "name": "Week 5",
+      "section": "Week 5 - Leadership & Motivation",
+      "items": [
+        {
+          "name": "Week 5 Person 1's lecture pdf",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839801"
+        },
+        {
+          "name": "Post game interview_Footy_2025_Person 6",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839802"
+        },
+        {
+          "name": "Week 5 - Prof Person 2's Lecture pdf",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839803"
+        }
+      ]
+    },
+    {
+      "name": "Week 6",
+      "section": "Week 6 - Sustainability & Economic Context",
+      "items": [
+        {
+          "name": "Watch these four videos before the workshop to be well prepared for the class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839816"
+        },
+        {
+          "name": "Week 6 Person 1's lecture pdf-_2026 S2",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839828"
+        },
+        {
+          "name": "Week 6 Person 3's lecture pdf Sem 2 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839830"
+        },
+        {
+          "name": "Related news and articles_S2 2026",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6486445"
+        },
+        {
+          "name": "France records more than 5,700 excess deaths during June heatwave (access date- The Guardian 29 Jul 2026)",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6373580"
+        },
+        {
+          "name": "ABC news_People over 60 face heat exposure danger at lower temperatures, study suggests",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=6448151"
+        }
+      ]
+    },
+    {
+      "name": "Week 7",
+      "section": "Week 7 - Innovation & Entrepreneurship, Creativity & Problem Solving",
+      "items": [
+        {
+          "name": "Week 7 - Mindfulness lecture - Prof Person 2 - pdf-_S2_ 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839872"
+        },
+        {
+          "name": "Week 7 Person 1's lecture pdf-_ S2_ 2026",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839873"
+        },
+        {
+          "name": "Week 7 Person 4 pdf",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839874"
+        },
+        {
+          "name": "What is Entrepreneurship - Workshop - The Entrepreneur ( Person 5)-_S2_2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839875"
+        },
+        {
+          "name": "MEET MONASH FOUNDERS",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839888"
+        }
+      ]
+    },
+    {
+      "name": "Week 8",
+      "section": "Week 8 - Written and Oral Communication Skills, Building Business Relationships, Ethical Practice",
+      "items": [
+        {
+          "name": "Person 1's lecture slides_S2 2026_PDF",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6510567"
+        },
+        {
+          "name": "Week 8 Team Progress Update",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839909"
+        },
+        {
+          "name": "Bus Driver Handbook",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839913"
+        },
+        {
+          "name": "Team Civil Culture",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839914"
+        },
+        {
+          "name": "Team Boroondara",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839915"
+        }
+      ]
+    },
+    {
+      "name": "During the break",
+      "section": "During the break",
+      "items": [
+        {
+          "name": "Individual Assignment Strategic Thinking guidance",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839812"
+        }
+      ]
+    },
+    {
+      "name": "Week 9",
+      "section": "Week 9 - Developing a Business Case, Customer-centric Management, Project Co-creation",
+      "items": [
+        {
+          "name": "Person 1's workshop lectures--S2_2026",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5839927"
+        },
+        {
+          "name": "Albanese government abandons beleaguered inland rail project connecting NSW with Queensland - Rail transport - The Guard",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839930"
+        }
+      ]
+    },
+    {
+      "name": "Week 10",
+      "section": "Week 10 - Customer-centric Management & Project Co-creation",
+      "items": [
+        {
+          "name": "Week 10 Team Progress Update",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839937"
+        },
+        {
+          "name": "Person 1's slides in practical class-S2-2026",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6634121"
+        },
+        {
+          "name": "Person 7's lecture Sem 2_ 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839940"
+        }
+      ]
+    },
+    {
+      "name": "Week 11",
+      "section": "Week 11 - Contracting & Procurement",
+      "items": [
+        {
+          "name": "PPT slides- Person 1 S2 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6687513"
+        },
+        {
+          "name": "Week 11 Person 8 and Person 9 SEW lecture PPT slides Sem 2 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839956"
+        }
+      ]
+    },
+    {
+      "name": "Week 12",
+      "section": "Week 12 - Risk management, safety, ethics",
+      "items": [
+        {
+          "name": "Week 12 Person 10 Sem 2 2026 pdf",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839971"
+        },
+        {
+          "name": "End-of-semester Test",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839972"
+        },
+        {
+          "name": "Week 12 Team Progress Update",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5839973"
+        },
+        {
+          "name": "Engineers Australia Code of Ethics and Guidelines on Professional Conduct",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5839975"
+        }
+      ]
+    },
+    {
+      "name": "Assessments",
+      "section": "Assessments",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5839986"
+        },
+        {
+          "name": "In-class active participation",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5839989"
+        },
+        {
+          "name": "W5 Pre-workshop task (1%) - Leadership",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840027"
+        },
+        {
+          "name": "W8 pre-workshop task (1.5%) - Written Communication and building business relationships",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840030"
+        },
+        {
+          "name": "W9 Pre-workshop task (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840031"
+        },
+        {
+          "name": "W12 Pre-workshop task (1.5%) - Ethics",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840032"
+        },
+        {
+          "name": "W1 Post-class task (1%) - Success",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840033"
+        },
+        {
+          "name": "W2 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840034"
+        },
+        {
+          "name": "W3 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840035"
+        },
+        {
+          "name": "W4 Post-workshop exercise (2%) - Relationships + Communication",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840036"
+        },
+        {
+          "name": "Week 5 interview (5%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6413426"
+        },
+        {
+          "name": "Interview locations - as of 3-9-2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6462052"
+        },
+        {
+          "name": "W6 Post-workshop exercise (1%) - Sustainability",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840038"
+        },
+        {
+          "name": "W10 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840042"
+        },
+        {
+          "name": "W11 Post-workshop exercise (2%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840043"
+        },
+        {
+          "name": "Individual assignment (10%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840044"
+        },
+        {
+          "name": "Teams - Sem 2 2026 - Updated 9-9-2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6503217"
+        },
+        {
+          "name": "Team project report",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840046"
+        },
+        {
+          "name": "Team project presentation",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840047"
+        },
+        {
+          "name": "Week 8 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840048"
+        },
+        {
+          "name": "Week 10 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840049"
+        },
+        {
+          "name": "Week 12 Team Progress update",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840050"
+        },
+        {
+          "name": "Individual reflection submission (10%)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5840052"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "section": "Support",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5840055"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Monday Morning Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436625",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Monday Afternoon Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436829",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Monday Morning Week 6",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436626",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Monday Afternoon Week 6",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6445166",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Thursday Morning Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436628",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Thursday Afternoon Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6445162",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Thursday Morning Week 6",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436636",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Friday Morning Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436637",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Friday Afternoon Week 5",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6445165",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Friday Morning Week 6",
+      "mod": "choice",
+      "url": "https://learning.monash.edu/mod/choice/view.php?id=6436825",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "W7 Post-workshop (2%) Entrepreneurship MCQ Quiz",
+      "mod": "quiz",
+      "url": "https://learning.monash.edu/mod/quiz/view.php?id=5840040",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "W8 quiz Mindfulness (5%)",
+      "mod": "quiz",
+      "url": "https://learning.monash.edu/mod/quiz/view.php?id=5840045",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Announcements",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5839978",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "General Discussion",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5839979",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Ask the teaching team",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5839980",
+      "reason": "not-a-file"
+    }
+  ]
+}

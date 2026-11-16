@@ -1,0 +1,465 @@
+{
+  "unit": "CHE5883-CHE6883",
+  "pageUrl": "https://learning.monash.edu/course/view.php?id=43637",
+  "courseFolder": "CHE5883-CHE6883 - Nanostructured membranes for separation and energy production - S2 2026",
+  "folders": [
+    {
+      "name": "Unit information",
+      "section": "Unit information",
+      "items": [
+        {
+          "name": "Leganto Reading List",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5576465"
+        },
+        {
+          "name": "Learning Capture",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5576466"
+        },
+        {
+          "name": "Learning capture",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5576467"
+        }
+      ]
+    },
+    {
+      "name": "Week 1",
+      "section": "Week 1 - Week 1 Intro/Overview",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576479"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576480"
+        },
+        {
+          "name": "After class reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576481"
+        }
+      ]
+    },
+    {
+      "name": "Week 2",
+      "section": "Week 2 - Week 2 Porous Membranes",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576485"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576489"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576490"
+        },
+        {
+          "name": "Phase Inversion Lab Materials",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576491"
+        },
+        {
+          "name": "Phase Inversion Lab Group Allocation",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6317435"
+        }
+      ]
+    },
+    {
+      "name": "Week 3",
+      "section": "Week 3 - Week 3 Scientific Guest Lecture",
+      "items": [
+        {
+          "name": "Lecture note",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576494"
+        }
+      ]
+    },
+    {
+      "name": "Week 4",
+      "section": "Week 4 - Week 4 Osmotic Membranes",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576499"
+        },
+        {
+          "name": "After class reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576500"
+        },
+        {
+          "name": "Additional Videos to accompany osmotic membrane lecture",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576501"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576504"
+        }
+      ]
+    },
+    {
+      "name": "Week 5",
+      "section": "Week 5 - Week 5 Nanostructured Membranes",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576507"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576508"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576511"
+        }
+      ]
+    },
+    {
+      "name": "Week 6",
+      "section": "Week 6 - Week 6 Membrane Theory",
+      "items": [
+        {
+          "name": "Lecture Notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576514"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576517"
+        },
+        {
+          "name": "Movies for Membrane Theory",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576518"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576519"
+        }
+      ]
+    },
+    {
+      "name": "Week 7",
+      "section": "Week 7 - Week 7 Ion Transport 1",
+      "items": [
+        {
+          "name": "Lecture Notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576522"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576525"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576526"
+        }
+      ]
+    },
+    {
+      "name": "Week 8",
+      "section": "Week 8 - Week 8 Ion Transport 2",
+      "items": [
+        {
+          "name": "Lecture Notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576531"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576535"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576536"
+        }
+      ]
+    },
+    {
+      "name": "Week 9",
+      "section": "Week 9 - Week 9 Membranes for Lithium Extraction",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576529"
+        },
+        {
+          "name": "Pilot Plant RO Lab Materials",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6317465"
+        },
+        {
+          "name": "Pilot Plant RO Lab Group Allocation",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6317445"
+        }
+      ]
+    },
+    {
+      "name": "Week 10",
+      "section": "Week 10 - Week 10 Gas Separation",
+      "items": [
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576538"
+        },
+        {
+          "name": "Spreadsheets for Calculating Membrane Performance",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576541"
+        }
+      ]
+    },
+    {
+      "name": "Week 11",
+      "section": "Week 11 - Week 11 CO2 Capture",
+      "items": [
+        {
+          "name": "Pre Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576543"
+        },
+        {
+          "name": "Lecture notes",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576547"
+        },
+        {
+          "name": "Practical",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576548"
+        }
+      ]
+    },
+    {
+      "name": "Week 12",
+      "section": "Week 12 - Week 12 Fouling",
+      "items": [
+        {
+          "name": "Lecture Notes Week 12",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576550"
+        },
+        {
+          "name": "Practical Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576552"
+        },
+        {
+          "name": "After Class Reading",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576554"
+        }
+      ]
+    },
+    {
+      "name": "Assessments",
+      "section": "Assessments",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5576584"
+        },
+        {
+          "name": "Recorded lab video",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576562"
+        },
+        {
+          "name": "Recorded Lab Virtual Class",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5576563"
+        },
+        {
+          "name": "Lab description",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576564"
+        },
+        {
+          "name": "Risk Assessment template",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576565"
+        },
+        {
+          "name": "safe work instruction template",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576566"
+        },
+        {
+          "name": "MSDS-DMF",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576567"
+        },
+        {
+          "name": "RA_DMF_CHE5883-6883",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576568"
+        },
+        {
+          "name": "RA_Experiment_CHEM5883-6883",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576569"
+        },
+        {
+          "name": "SWI_Experiment_CHEM5883-6883",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576570"
+        },
+        {
+          "name": "Report marking sheet",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576571"
+        },
+        {
+          "name": "Lab report template",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576572"
+        },
+        {
+          "name": "assessment-coversheet",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576573"
+        },
+        {
+          "name": "Laboratory Report 1 (15% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6317875"
+        },
+        {
+          "name": "Pilot Plant RO Lab Materials",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=6317992"
+        },
+        {
+          "name": "Laboratory Report 2 (15% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=6317886"
+        },
+        {
+          "name": "Assignment 1 2026",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5576579"
+        },
+        {
+          "name": "Assignment 1 - Literature Review OR Proposal Writing (10% of final grade)",
+          "kind": "attachments",
+          "mod": "assign",
+          "url": "https://learning.monash.edu/mod/assign/view.php?id=5576580"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "section": "Support",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5576589"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Announcements",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5576462",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Student discussion forum",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5576582",
+      "reason": "not-a-file"
+    }
+  ]
+}

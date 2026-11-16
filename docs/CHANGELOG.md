@@ -3,6 +3,32 @@
 All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [4.7.0] — 2026-11-16
+
+### Changed
+- Scanning now reads Moodle's page structure (`data-for`, `data-id`, `data-number`, `modtype_*`) instead of looking for a section titled `Learning`, so units that arrange their sections differently are scanned the same way.
+- A Unit Dashboard scan covers every section, including `Unit information`, `Assessments` and `Support`, and keeps the order of the course index.
+- File resources are saved under the activity name with the extension of the file Moodle actually serves, including resources that Moodle shows inside a page.
+- LTI tools and Moodle pages are saved as `.url` shortcuts in the link group; LTI activities are no longer labelled as video.
+- Names no longer end in `-` when the Moodle title ends in `*` or `?`.
+- The content script is split into `lib/shared.js`, `lib/moodle-page.js`, `lib/download-plan.js` and `lib/resource-resolver.js`; the service worker shares the naming rules through `lib/shared.js`.
+
+### Fixed
+- File resources were saved with a `.php` extension.
+- Forums, quizzes and choices were downloaded as if they were files.
+- Restricted activities were downloaded as the course page, and several of them collapsed into one entry.
+- Scanning from the `UNIT DASHBOARD` tab (`…&section=0`) found nothing.
+- Sections that are not weeks were moved to the end of the list.
+- A file linked from inline content on the dashboard was missed.
+- The popup's fallback injection only loaded one of the content scripts.
+
+### Added
+- Assignments are opened like folders: files attached to the assignment description are downloaded into a folder named after the assignment. Assignments without attachments produce nothing, and submission and feedback files are never touched.
+- Four sanitized unit dashboards, one section page and one assignment page as test fixtures, golden tests that drive the extension through its message interfaces, and `scripts/sanitize_fixture.js` for adding more.
+- `docs/MANUAL_TESTING.md` with the checks that need a real Moodle login.
+- The popup counter is labelled `Sections` instead of `Weeks`.
+- `docs/INSTALL.md` and `docs/DEBUG.md` rewritten for the current extension.
+
 ## [4.6.1] — 2026-08-10
 
 ### Added
