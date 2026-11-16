@@ -39,7 +39,7 @@
 
 点顶部的 `UNIT DASHBOARD`（地址变成 `…&section=0`）后 Scan。预期与第 4 步结果相同，4.6.1 在这里扫不到任何东西。
 
-## 6. section 页面模式（只有手写页面的测试）
+## 6. section 页面模式
 
 1. 打开 MTE5886 的 Week 7 页面（地址带 `&section=N`），Scan。预期：只有 `Week 7` 一个文件夹，下载到 `Downloads/Week 7/`。
 2. 打开 ENG5105 的 `Weekly Workshop - Common Materials` 页面，Scan。预期：除了 7 个活动，还能看到 label 正文里链接的文件。
