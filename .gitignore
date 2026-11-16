@@ -33,3 +33,6 @@ build/
 __pycache__/
 *.pyc
 github-push.bat
+
+# Local-only inputs for scripts (e.g. names to scrub from fixtures)
+*.local.txt

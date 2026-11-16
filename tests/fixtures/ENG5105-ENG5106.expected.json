@@ -1,0 +1,429 @@
+{
+  "unit": "ENG5105-ENG5106",
+  "pageUrl": "https://learning.monash.edu/course/view.php?id=43908",
+  "courseFolder": "ENG5105-ENG5106 - Integrated design project - S2 2026",
+  "folders": [
+    {
+      "name": "Unit information",
+      "section": "Unit information",
+      "items": [
+        {
+          "name": "Leganto Reading List",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5614133"
+        },
+        {
+          "name": "Learning Capture",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5614134"
+        }
+      ]
+    },
+    {
+      "name": "Getting started",
+      "section": "Getting started",
+      "items": [
+        {
+          "name": "ENG5105-5106 S2 2026 - Unit Guide_Rev0.pdf",
+          "kind": "embedded-file",
+          "mod": "embedded",
+          "url": "https://learning.monash.edu/pluginfile.php/7161028/customfield_textarea/value/2300384/ENG5105-5106%20S2%202026%20-%20Unit%20Guide_Rev0.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Weekly Workshop - Common Materials",
+      "section": "Weekly Workshop - Common Materials",
+      "items": [
+        {
+          "name": "ENG5105-6 Workshop 1 Intro Slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6373961"
+        },
+        {
+          "name": "Week 1 - Guest Speaker Slides - Person 11",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6375854"
+        },
+        {
+          "name": "Teamwork Video 2025",
+          "kind": "link",
+          "mod": "page",
+          "url": "https://learning.monash.edu/mod/page/view.php?id=5614174"
+        },
+        {
+          "name": "ENG5105-6 Week 3 Workshop Slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6419864"
+        },
+        {
+          "name": "Week 5 workshop slides - oral presentations",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6481139"
+        },
+        {
+          "name": "Week 9 workshop slides on PhD pathways",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6622058"
+        },
+        {
+          "name": "Week 10 Slides - PPM",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6630454"
+        }
+      ]
+    },
+    {
+      "name": "Chemical and Materials Engineering",
+      "section": "Chemical and Materials Engineering",
+      "items": [
+        {
+          "name": "Week 2 Aspen Assignment",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614262"
+        },
+        {
+          "name": "Week 2 Aspen Solution",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614263"
+        },
+        {
+          "name": "Week 3 Aspen Demonstration Slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614267"
+        },
+        {
+          "name": "Week 3 Aspen Solution",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5614270"
+        },
+        {
+          "name": "Week 4 Aspen Solution",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5614276"
+        },
+        {
+          "name": "Week 7 Aspen Assignment",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614281"
+        },
+        {
+          "name": "Week 7 Aspen Solution",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614282"
+        },
+        {
+          "name": "Aspen lab assessment-week 8",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6550222"
+        },
+        {
+          "name": "Aspen Lab Assessment - Week 8",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6549950"
+        },
+        {
+          "name": "Week 8 Aspen Assignment",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614289"
+        },
+        {
+          "name": "Week 8 Aspen soln",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614290"
+        },
+        {
+          "name": "DSC-TGA analysis of plastics reading material",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6408370"
+        }
+      ]
+    },
+    {
+      "name": "Assessments",
+      "section": "Assessments",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5614454"
+        },
+        {
+          "name": "CHE5105-6 - Oral Presentation Instructions & Rubrics",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5614495"
+        }
+      ]
+    },
+    {
+      "name": "Forums",
+      "section": "Forums",
+      "items": [
+        {
+          "name": "EdStem Forums",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5614498"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "section": "Support",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5614500"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Announcements",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5614130",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Aspen Assessment Week 2 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614264",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 3 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614271",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 4 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614277",
+      "reason": "restricted"
+    },
+    {
+      "name": "W4 Materials : Video presentation [5%]",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614278",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Aspen Assessment Week 7 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614283",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 8 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=20#module-5614295",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Freeze Submission (UNGRADED)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614302",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "TGA/DSC data analysis",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6394886",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "MECH - W1-W3 - ANSYS: Discovery and ANSYS Meshing - 2%",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6372412",
+      "reason": "restricted"
+    },
+    {
+      "name": "MECH - W3-W4 ANSYS: Linear FEA and ANSYS Contacts and Connections [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6372838",
+      "reason": "restricted"
+    },
+    {
+      "name": "MECH - Fuse1 Nylon Printing - First Round CAD Submission - 1%",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6373187",
+      "reason": "restricted"
+    },
+    {
+      "name": "MECH - W4-W7 ANSYS: Contacts and Non-Linear FEA [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6373149",
+      "reason": "restricted"
+    },
+    {
+      "name": "MECH - W5-W8 ANSYS: CFD [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6373181",
+      "reason": "restricted"
+    },
+    {
+      "name": "MECH - Fuse1 Nylon Printing - Second Round CAD Submission - 1%",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-6373193",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 2 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614457",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 3 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614458",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 4 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614459",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 7 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614460",
+      "reason": "restricted"
+    },
+    {
+      "name": "Aspen Assessment Week 8 [2%]",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614461",
+      "reason": "restricted"
+    },
+    {
+      "name": "Civil - Sustainability activity (3%)",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614466",
+      "reason": "restricted"
+    },
+    {
+      "name": "Civil - Concept report swap (3%)",
+      "mod": null,
+      "url": "https://learning.monash.edu/course/view.php?id=43908&section=36#module-5614467",
+      "reason": "restricted"
+    },
+    {
+      "name": "Materials - Lab Data Analysis Interview [5%]",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614479",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Team Contract - (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614480",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 2 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614481",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 3 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373781",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 4 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373782",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 5 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373783",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 7 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373784",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 8 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373785",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 9 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373787",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 10 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373788",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Standup Week 11 (1%)",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=6373789",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Proposal Design Submissions [20%]",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614491",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Detail Design Submissions [50%]",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614492",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Concept Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614493",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Detail Design Oral Presentation [5%] - grades only, submit slides as instructed below, oral marked on the day",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5614494",
+      "reason": "not-a-file"
+    }
+  ]
+}

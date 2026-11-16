@@ -1,0 +1,477 @@
+{
+  "unit": "MTE5886-MTE6886",
+  "pageUrl": "https://learning.monash.edu/course/view.php?id=44130",
+  "courseFolder": "MTE5886-MTE6886 - Additive manufacturing of metallic materials - S2 2026",
+  "folders": [
+    {
+      "name": "Unit information",
+      "section": "Unit information",
+      "items": [
+        {
+          "name": "Leganto Reading List",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5651514"
+        },
+        {
+          "name": "Learning Capture",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5651515"
+        }
+      ]
+    },
+    {
+      "name": "Additional information and resources",
+      "section": "Additional information and resources",
+      "items": [
+        {
+          "name": "Introduction",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651522"
+        },
+        {
+          "name": "Academic Integrity",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651523"
+        },
+        {
+          "name": "MTE5886 Accreditation Syllabus",
+          "kind": "link",
+          "mod": "url",
+          "url": "https://learning.monash.edu/mod/url/view.php?id=5651524"
+        },
+        {
+          "name": "Live-stream and lecture recordings",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5651525"
+        }
+      ]
+    },
+    {
+      "name": "Week 1",
+      "section": "Week 1 - Introduction to Metals",
+      "items": [
+        {
+          "name": "Lecture 1 - Crystal Structure and Lattice Defects",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651533"
+        },
+        {
+          "name": "Lecture 2 - Deformation of Metals",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651534"
+        },
+        {
+          "name": "Week 1 Practical",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651538"
+        },
+        {
+          "name": "Week Practical Solution",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651539"
+        }
+      ]
+    },
+    {
+      "name": "Week 2",
+      "section": "Week 2 - Deformation and Strengthening of Metals",
+      "items": [
+        {
+          "name": "Week 2 Lecture Notes",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651541"
+        },
+        {
+          "name": "Lecture 3 Hardening and Strength",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651542"
+        },
+        {
+          "name": "Lecture 4 Fracture and Fracture Toughness",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651543"
+        }
+      ]
+    },
+    {
+      "name": "Week 3",
+      "section": "Week 3 - Mechanical Properties",
+      "items": [
+        {
+          "name": "Week 3 Lecture Notes",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651550"
+        }
+      ]
+    },
+    {
+      "name": "Week 4",
+      "section": "Week 4 - Microstructures of Metals and Alloys",
+      "items": [
+        {
+          "name": "Week 3-1",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651556"
+        },
+        {
+          "name": "Lecture 6 Phase diagrams and Microstructures",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651557"
+        },
+        {
+          "name": "Lecture 6 Phase Diagrams and Microstructures-continuous",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651558"
+        },
+        {
+          "name": "Practical 3",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651562"
+        },
+        {
+          "name": "Practical 3 Solutions",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651563"
+        },
+        {
+          "name": "Heat treatment",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6440313"
+        }
+      ]
+    },
+    {
+      "name": "Week 5",
+      "section": "Week 5 - Microstructures of Additive Manufactured Alloys",
+      "items": [
+        {
+          "name": "Week5-1",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651569"
+        },
+        {
+          "name": "Week5-2",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651570"
+        },
+        {
+          "name": "Lecture 8 Alloying Effects in Steels",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651571"
+        },
+        {
+          "name": "Lecture 9 Ti and Al Alloys",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651572"
+        },
+        {
+          "name": "Week 5 Tutorial",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651574"
+        }
+      ]
+    },
+    {
+      "name": "Week 6",
+      "section": "Week 6 - Conventional and Additive Processing of Metallic Alloys",
+      "items": [
+        {
+          "name": "Week6",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651586"
+        },
+        {
+          "name": "Summary",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651588"
+        },
+        {
+          "name": "Lecture 11 Casting Technologies",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651592"
+        }
+      ]
+    },
+    {
+      "name": "Week 7",
+      "section": "Week 7 - Additive Manufacturing - An introduction",
+      "items": [
+        {
+          "name": "Week 7 - Lecture slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651598"
+        },
+        {
+          "name": "Map instruction - NH to MCAM",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651599"
+        },
+        {
+          "name": "Assignment 3 Group allocation",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651601"
+        },
+        {
+          "name": "Assignment 3 marking rubric",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651602"
+        },
+        {
+          "name": "Assignment 3 Presentation marking rubric",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651603"
+        },
+        {
+          "name": "Contribution statement",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651604"
+        },
+        {
+          "name": "Component 1",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5651605"
+        },
+        {
+          "name": "Component 2",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5651606"
+        },
+        {
+          "name": "Component 3",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5651607"
+        },
+        {
+          "name": "Component 4",
+          "kind": "folder",
+          "mod": "folder",
+          "url": "https://learning.monash.edu/mod/folder/view.php?id=5651608"
+        }
+      ]
+    },
+    {
+      "name": "Week 8",
+      "section": "Week 8 - Design for Additive Manufacturing",
+      "items": [
+        {
+          "name": "Week 8 - Lecture slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651612"
+        },
+        {
+          "name": "Week 8 - Applied class design demo",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651616"
+        },
+        {
+          "name": "Week 8 - Applied class FEA",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651617"
+        }
+      ]
+    },
+    {
+      "name": "Week 9",
+      "section": "Week 9 - Laser Powder Bed Fusion",
+      "items": [
+        {
+          "name": "Week 9 - Lecture slides",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651620"
+        }
+      ]
+    },
+    {
+      "name": "Week 10",
+      "section": "Week 10 - Electron beam melting",
+      "items": [
+        {
+          "name": "2026 Week10 Lecture8 LDED",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6632140"
+        },
+        {
+          "name": "2026 Week10 Lecture7 SLM materials and microstructure",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6632141"
+        }
+      ]
+    },
+    {
+      "name": "Week 11",
+      "section": "Week 11 - Direct Energy Deposition",
+      "items": [
+        {
+          "name": "2026 Week11 Lecture9 WAAM",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6654557"
+        },
+        {
+          "name": "2026 Week11 Lecture10 post-processing and NDE",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6654558"
+        }
+      ]
+    },
+    {
+      "name": "Week 12",
+      "section": "Week 12 - Post processing and quality assurance in metal 3D printing and revision",
+      "items": [
+        {
+          "name": "2026 Week12 Lecture11 Revision",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=6700316"
+        }
+      ]
+    },
+    {
+      "name": "Assessments",
+      "section": "Assessments",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5651676"
+        },
+        {
+          "name": "Assignment Cover Sheet",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651668"
+        },
+        {
+          "name": "Assignment 1",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651672"
+        },
+        {
+          "name": "Assignment 2",
+          "kind": "file",
+          "mod": "resource",
+          "url": "https://learning.monash.edu/mod/resource/view.php?id=5651673"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "section": "Support",
+      "items": [
+        {
+          "name": "Studiosity- Click for fast feedback and live chat",
+          "kind": "link",
+          "mod": "lti",
+          "url": "https://learning.monash.edu/mod/lti/view.php?id=5651681"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Announcements",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5651511",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Week 7 discussion forum",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5651596",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Assignment 3 preliminary design files and slides",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651621",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Assignment 3 - Final redesigned part CAD file and presentation slides",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651629",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Assignment 3 Final Report",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651638",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Mock exam questions",
+      "mod": "quiz",
+      "url": "https://learning.monash.edu/mod/quiz/view.php?id=5651648",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Mock exam dropbox",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651649",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "General Discussion Forum",
+      "mod": "forum",
+      "url": "https://learning.monash.edu/mod/forum/view.php?id=5651663",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Assignment 1",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651669",
+      "reason": "not-a-file"
+    },
+    {
+      "name": "Assignment 2",
+      "mod": "assign",
+      "url": "https://learning.monash.edu/mod/assign/view.php?id=5651670",
+      "reason": "not-a-file"
+    }
+  ]
+}
