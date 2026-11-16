@@ -17,6 +17,33 @@ test('manifest remains valid MV3 JSON with the required permissions', () => {
   assert.equal(manifest.options_ui, undefined);
 });
 
+test('every script the manifest loads is shipped in the release ZIP', () => {
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
+  const background = fs.readFileSync(path.join(root, manifest.background.service_worker), 'utf8');
+  const packaging = fs.readFileSync(path.join(root, 'scripts', 'package_extension.py'), 'utf8');
+
+  const scripts = [
+    manifest.background.service_worker,
+    ...manifest.content_scripts.flatMap(entry => entry.js),
+    ...[...background.matchAll(/importScripts\(([^)]*)\)/g)]
+      .flatMap(match => [...match[1].matchAll(/['"]([^'"]+)['"]/g)].map(file => file[1]))
+  ];
+
+  assert.ok(scripts.includes('lib/shared.js'));
+  for (const script of scripts) {
+    assert.ok(fs.existsSync(path.join(root, script)), `${script} does not exist`);
+    assert.ok(packaging.includes(`"${script}"`), `${script} is missing from PACKAGE_FILES`);
+  }
+});
+
+test('the popup re-injects the same content scripts the manifest declares', () => {
+  const script = fs.readFileSync(path.join(root, 'popup.js'), 'utf8');
+  const injection = script.slice(script.indexOf('chrome.scripting.executeScript'));
+
+  assert.match(injection.slice(0, 300), /getManifest\(\)\.content_scripts/);
+  assert.doesNotMatch(script, /files:\s*\[\s*'content\.js'\s*\]/);
+});
+
 test('every popup translation key exists in both languages', () => {
   const html = fs.readFileSync(path.join(root, 'popup.html'), 'utf8');
   const script = fs.readFileSync(path.join(root, 'popup.js'), 'utf8');

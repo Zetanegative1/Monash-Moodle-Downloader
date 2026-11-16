@@ -28,9 +28,9 @@ const TRANSLATIONS = {
     emptyHint1: 'On a Unit Dashboard: downloads every published file across all weeks.',
     emptyHint2: 'On a single Week page: downloads only that week\u2019s resources.',
     scanTypeIndex: '📚 Unit Homepage (All Sections)',
-    scanTypePage: '📖 Week Page (Current Section)',
-    pathIndex: '📁 Path: Downloads/{course}/Week 1/, Week 2/, ...',
-    pathPage: '📁 Path: Downloads/Week N/filename',
+    scanTypePage: '📖 Section Page (Current Section)',
+    pathIndex: '📁 Path: Downloads/{course}/<section>/filename',
+    pathPage: '📁 Path: Downloads/<section>/filename',
     statusInit: 'Initializing...',
     statusFound: 'Scan complete: {n} files, {skipped} skipped',
     statusFoundWarnings: 'Scan complete with {n} folder warning(s)',
@@ -88,9 +88,9 @@ const TRANSLATIONS = {
     emptyHint1: '在 Unit Dashboard 页使用：一次性下载全部已发布的周次资源。',
     emptyHint2: '在单个 Week 页面使用：仅下载当前周的资源。',
     scanTypeIndex: '📚 Unit首页（全部章节）',
-    scanTypePage: '📖 Week页面（当前章节）',
-    pathIndex: '📁 路径: Downloads/{course}/Week 1/, Week 2/, ...',
-    pathPage: '📁 路径: Downloads/Week N/文件名',
+    scanTypePage: '📖 章节页面（当前章节）',
+    pathIndex: '📁 路径: Downloads/{course}/<章节>/文件名',
+    pathPage: '📁 路径: Downloads/<章节>/文件名',
     statusInit: '正在初始化...',
     statusFound: '扫描完成：{n} 个文件，跳过 {skipped} 个',
     statusFoundWarnings: '扫描完成，但有 {n} 个文件夹警告',
@@ -397,7 +397,10 @@ async function scanResources() {
       });
     } catch {
       showStatus(t('statusInit'), 'info');
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: chrome.runtime.getManifest().content_scripts.flatMap(entry => entry.js)
+      });
       await new Promise(r => setTimeout(r, 500));
       response = await chrome.tabs.sendMessage(tab.id, {
         action: 'scanResources',

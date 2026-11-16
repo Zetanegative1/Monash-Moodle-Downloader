@@ -157,6 +157,7 @@ if (typeof chrome !== 'undefined' && chrome.contextMenus) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     appendFolderPath,
+    getDownloadableExtension,
     handleDownloadAll,
     hasFileExtension,
     sanitizePathSegment

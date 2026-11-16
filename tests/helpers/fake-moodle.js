@@ -31,7 +31,19 @@ const CONTENT_TYPES = {
 
 const EMBEDDED_FILE_BYTES = MB;
 
-/** The file a `mod/resource` activity redirects to. Sizes range from 6 MB to 30 MB. */
+/** Every seventh resource is shown inside a Moodle page instead of redirecting to its file. */
+function isDisplayedInPage(cmId) {
+  return Number(cmId) % 7 === 0;
+}
+
+function resourcePageHtml(cmId) {
+  const file = resourceFile(cmId);
+  return `<!DOCTYPE html><html><body><div id="region-main">
+<div class="resourceworkaround">Click <a href="${file.url}">${file.filename}</a> link to view the file.</div>
+</div></body></html>`;
+}
+
+/** The file behind a `mod/resource` activity. Sizes range from 6 MB to 30 MB. */
 function resourceFile(cmId) {
   const id = Number(cmId);
   const type = RESOURCE_TYPES[id % RESOURCE_TYPES.length];
@@ -83,6 +95,10 @@ function describeUrl(rawUrl) {
   const cmId = url.searchParams.get('id');
   const moduleMatch = url.pathname.match(/^\/mod\/([a-z0-9_]+)\/view\.php$/);
 
+  if (moduleMatch?.[1] === 'resource' && cmId && isDisplayedInPage(cmId)) {
+    const html = resourcePageHtml(cmId);
+    return { finalUrl: url.href, contentType: 'text/html; charset=utf-8', bytes: Buffer.byteLength(html), body: html };
+  }
   if (moduleMatch?.[1] === 'resource' && cmId) {
     const file = resourceFile(cmId);
     return { finalUrl: file.url, filename: file.filename, contentType: file.contentType, bytes: file.bytes };
@@ -181,5 +197,6 @@ module.exports = {
   createFakeMoodle,
   describeUrl,
   folderFiles,
+  isDisplayedInPage,
   resourceFile
 };
