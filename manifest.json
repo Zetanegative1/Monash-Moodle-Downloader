@@ -1,14 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Monash Moodle Downloader",
-  "version": "4.7.0",
-  "description": "Batch-download Monash Moodle course resources, auto-organized by section.",
+  "version": "4.7.1",
+  "description": "Unofficial tool, not affiliated with Monash University. Batch-download Moodle course files, organized by section.",
   "permissions": [
     "downloads",
-    "activeTab",
     "scripting",
-    "storage",
-    "contextMenus"
+    "storage"
   ],
   "host_permissions": [
     "https://learning.monash.edu/*"
