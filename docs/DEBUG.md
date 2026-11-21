@@ -61,4 +61,4 @@ chrome.downloads.download({
 2. 期望出现但没有出现的条目名称，或者出错的文件名。
 3. Service Worker 控制台里的报错。
 
-页面结构不同导致的问题，最有用的是把该页面保存成单个 HTML 文件。提交前用 `scripts/sanitize_fixture.js` 去掉个人信息，用法见 [README](../README.md#-development)。
+页面结构不同导致的问题，最有用的是把该页面保存成单个 HTML 文件。附到 issue 之前，先删掉里面的姓名、学号等个人信息。
