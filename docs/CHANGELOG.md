@@ -3,6 +3,18 @@
 All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [4.7.1] — 2026-11-21
+
+### Removed
+- The right-click menu item `Download course resources`, which started a scan but showed no result, and the `contextMenus` permission it needed.
+- The unused `activeTab` permission; the host permission for `learning.monash.edu` already covers injecting the content scripts.
+- Development notes that no longer describe the code: `docs/FOLDER_RESOURCE_DOWNLOAD_PLAN.md` and the per-unit checklists in `docs/fixtures-expected/`.
+- Tests, test fixtures, `scripts/sanitize_fixture.js`, `docs/MANUAL_TESTING.md` and the Node dev dependencies are no longer published in the repository; they stay in local development. The release workflow now only checks JavaScript syntax before building the ZIP.
+
+### Added
+- `PRIVACY.md` and an unofficial-project notice in the extension description and README, in preparation for the Chrome Web Store.
+- Chrome Web Store install link in the README and `docs/INSTALL.md`.
+
 ## [4.7.0] — 2026-11-16
 
 ### Changed

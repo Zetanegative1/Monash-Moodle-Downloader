@@ -1,6 +1,12 @@
 # 安装指南
 
-## 方式一：下载 ZIP（推荐）
+## 方式一：Chrome 应用商店（推荐）
+
+打开 [Chrome 应用商店页面](https://chromewebstore.google.com/detail/llggbcaieclakkfapnnipfhaaneidkib)，点击**添加至 Chrome**，再把扩展图标固定到工具栏。商店版本会自动更新。
+
+如果之前以"加载已解压的扩展程序"方式装过旧版，到 `chrome://extensions/` 把那一份移除，避免装了两个。
+
+## 方式二：下载 ZIP
 
 1. 打开 [最新 Release](https://github.com/Zetanegative1/Monash-Moodle-Downloader/releases/latest)。
 2. 在 **Assets** 里下载 `Monash-Moodle-Downloader-vX.Y.Z.zip`，解压到一个不会被移动或删除的文件夹。
@@ -10,13 +16,13 @@
 
 Chrome 不会自动更新已解压的扩展。有新版本时，下载并解压新的 ZIP，再加载一次。
 
-## 方式二：克隆仓库
+## 方式三：克隆仓库
 
 ```bash
 git clone https://github.com/Zetanegative1/Monash-Moodle-Downloader.git
 ```
 
-然后按方式一的第 3–5 步加载仓库文件夹。扩展没有构建步骤，源码即可直接加载。
+然后按方式二的第 3–5 步加载仓库文件夹。扩展没有构建步骤，源码即可直接加载。
 
 ## 安装后需要做的一项设置
 

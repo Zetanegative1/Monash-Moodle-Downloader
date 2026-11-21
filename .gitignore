@@ -1,7 +1,3 @@
-# One-time setup scripts
-github-push.bat
-github-fix-push.bat
-
 # AI / assistant local state — not meant for sharing
 CLAUDE.md
 .claude/
@@ -26,13 +22,20 @@ Thumbs.db
 *.swp
 *.swo
 
-# Node / build (if added later)
+# Node / Python / build
 node_modules/
 dist/
 build/
 __pycache__/
 *.pyc
-github-push.bat
+.pytest_cache/
 
 # Local-only inputs for scripts (e.g. names to scrub from fixtures)
 *.local.txt
+
+# Local development only: tests, test tooling and dev dependencies
+tests/
+package.json
+package-lock.json
+scripts/sanitize_fixture.js
+docs/MANUAL_TESTING.md

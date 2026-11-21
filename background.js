@@ -134,26 +134,6 @@ async function createUrlShortcut(name, url, path) {
   });
 }
 
-if (typeof chrome !== 'undefined' && chrome.runtime?.onInstalled) {
-  chrome.runtime.onInstalled.addListener(() => {
-    if (!chrome.contextMenus) return;
-    chrome.contextMenus.create({
-      id: 'downloadCourseResources',
-      title: 'Download course resources',
-      contexts: ['page'],
-      documentUrlPatterns: ['https://learning.monash.edu/*']
-    }, () => { chrome.runtime.lastError; });
-  });
-}
-
-if (typeof chrome !== 'undefined' && chrome.contextMenus) {
-  chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === 'downloadCourseResources') {
-      chrome.tabs.sendMessage(tab.id, { action: 'scanResources' }).catch(() => {});
-    }
-  });
-}
-
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     appendFolderPath,
