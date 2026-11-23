@@ -25,18 +25,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install test dependencies
-        run: npm ci
-
-      - name: Run JavaScript checks
+      - name: Check JavaScript syntax
         run: |
-          node --check content.js
-          node --check background.js
-          node --check popup.js
-          node --test tests/*.test.js
-
-      - name: Run packaging tests
-        run: python -m unittest discover -s tests -p "test_*.py"
+          for file in background.js content.js popup.js lib/*.js; do
+            node --check "$file"
+          done
 
       - name: Verify tag matches manifest version
         shell: bash

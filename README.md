@@ -1,9 +1,12 @@
 # 📚 Monash Moodle Downloader
 
 > One-click batch download for Monash University Moodle course resources — auto-sorted by section. Stop right-clicking 40 PDFs the night before finals. 😮‍💨
+>
+> _Unofficial student project — not affiliated with or endorsed by Monash University._
 
-[![Version](https://img.shields.io/badge/version-4.7.0-6366f1)](./docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-4.7.1-6366f1)](./docs/CHANGELOG.md)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-8b5cf6)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-install-4285F4?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/llggbcaieclakkfapnnipfhaaneidkib)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
 ---
@@ -30,9 +33,19 @@ Full list in the [changelog](./docs/CHANGELOG.md).
 - 🌐 **Bilingual UI** — English by default, one-click switch to 中文
 - ⚡ **Sidebar-powered** — pulls every resource from the course index without navigating away
 
+## 🔒 Privacy
+
+Everything runs locally in your browser on `learning.monash.edu` only, using your existing Moodle login. Nothing is sent to the developer or any third party. See [PRIVACY.md](./PRIVACY.md).
+
 ## 🚀 Install
 
-### For most users — download the ZIP
+### Recommended — Chrome Web Store
+
+Install **[Monash Moodle Downloader from the Chrome Web Store](https://chromewebstore.google.com/detail/llggbcaieclakkfapnnipfhaaneidkib)** and pin it to your toolbar. Chrome keeps it up to date automatically.
+
+If you loaded an earlier version unpacked, remove that copy in `chrome://extensions/` so only one is installed.
+
+### Without the Web Store — download the ZIP
 
 1. Open the [latest release](https://github.com/Zetanegative1/Monash-Moodle-Downloader/releases/latest).
 2. Under **Assets**, download `Monash-Moodle-Downloader-vX.Y.Z.zip` and extract it to a permanent folder.
@@ -106,51 +119,35 @@ Downloads/<Section>/…
 
 ## 🧪 Development
 
-The extension has no runtime dependencies and no build step. Tests need Node 22+ and `jsdom`:
+The extension has no runtime dependencies and no build step: load the project folder unpacked and reload it in `chrome://extensions/` after each change. To build the release ZIP:
 
 ```bash
-npm install
+python scripts/package_extension.py
 ```
 
-```bash
-npm test
-```
-
-`tests/fixtures/` holds saved unit pages with personal data removed, each next to a reviewed `<unit>.expected.json`; `tests/golden.test.js` checks that a scan produces exactly those downloads. To add a unit, save its page as a single HTML file and run:
-
-```bash
-node scripts/sanitize_fixture.js saved-page.html tests/fixtures/<unit>.html --names names.local.txt
-```
-
-`names.local.txt` lists people named in activity titles, one per line; keep it out of git. Checks that need a real Moodle login are in [docs/MANUAL_TESTING.md](./docs/MANUAL_TESTING.md).
+Pushing a `vX.Y.Z` tag that matches `manifest.json` builds the ZIP and attaches it to a GitHub Release.
 
 ## 📂 Project layout
 
 ```
-moodle-downloader/
+Monash-Moodle-Downloader/
 ├── manifest.json
 ├── background.js
 ├── content.js
 ├── lib/
 │   └── shared.js · moodle-page.js · download-plan.js · resource-resolver.js
 ├── popup.html · popup.css · popup.js
-├── scripts/
-│   ├── package_extension.py
-│   └── sanitize_fixture.js
-├── tests/
-│   ├── fixtures/
-│   └── helpers/
-├── package.json
-├── .github/
-│   └── workflows/release.yml
 ├── icons/
 │   └── icon16 · icon48 · icon128.png
-└── docs/
-    ├── CHANGELOG.md
-    ├── INSTALL.md
-    ├── DEBUG.md
-    ├── MANUAL_TESTING.md
-    └── fixtures-expected/
+├── scripts/
+│   └── package_extension.py
+├── docs/
+│   ├── INSTALL.md
+│   ├── DEBUG.md
+│   └── CHANGELOG.md
+├── .github/workflows/release.yml
+├── PRIVACY.md
+└── LICENSE
 ```
 
 ## ⚠️ Known quirks
@@ -168,8 +165,7 @@ moodle-downloader/
 | [docs/INSTALL.md](./docs/INSTALL.md) | 安装和使用（中文） |
 | [docs/DEBUG.md](./docs/DEBUG.md) | 排错指南（中文） |
 | [docs/CHANGELOG.md](./docs/CHANGELOG.md) | Release history |
-| [docs/MANUAL_TESTING.md](./docs/MANUAL_TESTING.md) | Checks that need a real Moodle login |
-| [docs/fixtures-expected/](./docs/fixtures-expected/README.md) | Structure of the sample units and the download rules derived from them |
+| [PRIVACY.md](./PRIVACY.md) | Privacy policy |
 
 ## 🙏 Credits & acknowledgements
 
